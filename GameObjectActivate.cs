@@ -6,7 +6,7 @@ namespace OneDayGame {
 
 	/// Enable child game object on collision with
 	/// other game object.
-	public class OnCollisionEnable : OnCollision {
+	public class GameObjectActivate : OnCollision {
 
 		public enum TagOptions { Include, Exclude }
 

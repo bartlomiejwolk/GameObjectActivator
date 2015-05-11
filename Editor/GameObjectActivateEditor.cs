@@ -5,8 +5,8 @@ using Rotorz.ReorderableList;
 
 namespace OneDayGame {
 
-	[CustomEditor(typeof(OnCollisionEnable))]
-	public class OnCollisionEnableEditor : GameComponentEditor {
+	[CustomEditor(typeof(GameObjectActivate))]
+	public class GameObjectActivateEditor : GameComponentEditor {
 
 		private SerializedProperty _collisionComponent;
 		/*private SerializedProperty _tagOption;
@@ -23,7 +23,7 @@ namespace OneDayGame {
 
 		public override void OnInspectorGUI() {
 			base.OnInspectorGUI();
-			OnCollisionEnable script = (OnCollisionEnable)target;
+			GameObjectActivate script = (GameObjectActivate)target;
 			serializedObject.Update();
 
 			EditorGUILayout.PropertyField(_collisionComponent);
