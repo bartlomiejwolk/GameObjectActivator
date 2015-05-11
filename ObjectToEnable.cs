@@ -4,6 +4,7 @@ namespace GameObjectActivator {
 
     /// Object to enable.
     [System.Serializable]
+    // todo rename to ObjectSlot 
     public class ObjectToEnable {
 
         /// Game object.

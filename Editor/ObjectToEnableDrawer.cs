@@ -51,8 +51,9 @@ namespace GameObjectActivator {
                     16),
                 tag,
                 new GUIContent(
-                    "Layer",
-                    "Layer on which the hit object must be in order for this component to work."));
+                    "Tag",
+                    "Target GO must have this tag attached in order to be " +
+                    "enabled."));
             EditorGUIUtility.labelWidth = 0;
         }
 
