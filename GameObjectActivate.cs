@@ -45,7 +45,7 @@ namespace OneDayGame {
 		}
 
 		/// Handle collision.
-		public void EnableOnCollision(RaycastHit hitInfo) {
+		public void OnCollisionEnable(RaycastHit hitInfo) {
 		    var hitGOTag = hitInfo.transform.gameObject.tag;
 
 			foreach (ObjectToEnable obj in _objsToEnable) {
