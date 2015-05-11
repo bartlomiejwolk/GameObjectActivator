@@ -8,6 +8,7 @@ namespace GameObjectActivator {
     /// other game object.
     public class GameObjectActivate : MonoBehaviour {
 
+        [SerializeField]
         private List<ObjectToEnable> objsToEnable = new List<ObjectToEnable>();
 
         public List<ObjectToEnable> ObjsToEnable {
