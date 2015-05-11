@@ -23,7 +23,7 @@ namespace GameObjectActivator {
             foreach (ObjectToEnable obj in ObjsToEnable) {
                 switch (obj.TagOption) {
                     case TagOptions.Include:
-                        if (tag != obj.ExcludeTag) {
+                        if (hitGOTag != obj.ExcludeTag) {
                             break;
                         }
                         obj.ObjToEnable.SetActive(true);
@@ -31,7 +31,7 @@ namespace GameObjectActivator {
                     case TagOptions.Exclude:
                         // Don't enable target object when hit a GO
                         // with excluded tag.
-                        if (tag == obj.ExcludeTag) {
+                        if (hitGOTag == obj.ExcludeTag) {
                             break;
                         }
                         obj.ObjToEnable.SetActive(true);
