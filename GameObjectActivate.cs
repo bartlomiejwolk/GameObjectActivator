@@ -6,7 +6,7 @@ namespace OneDayGame {
 
 	/// Enable child game object on collision with
 	/// other game object.
-	public class GameObjectActivate : OnCollision {
+	public class GameObjectActivate : MonoBehaviour {
 
 		public enum TagOptions { Include, Exclude }
 
@@ -41,29 +41,17 @@ namespace OneDayGame {
 
 		public List<ObjectToEnable> _objsToEnable = new List<ObjectToEnable>();
 
-		public override void Start () {
-			base.Start();
-		}
-
-		public override void Update () {
-			base.Update();
-		}
-
-		public override void FixedUpdate() {
-			base.FixedUpdate();
-			// Check for collision
-			_collision = CollisionComponent.Collision;
-			if (_collision) {
-				HandleCollision();
-			}
+		private void FixedUpdate() {
 		}
 
 		/// Handle collision.
-		private void HandleCollision() {
+		public void EnableOnCollision(RaycastHit hitInfo) {
+		    var hitGOTag = hitInfo.transform.gameObject.tag;
+
 			foreach (ObjectToEnable obj in _objsToEnable) {
 				switch (obj.TagOption) {
 					case TagOptions.Include:
-						if (CollisionComponent.HitObject.tag != obj.ExcludeTag) {
+						if (tag != obj.ExcludeTag) {
 							break;
 						}
 						obj.ObjToEnable.SetActive(true);
@@ -71,7 +59,7 @@ namespace OneDayGame {
 					case TagOptions.Exclude:
 						// Don't enable target object when hit a GO
 						// with excluded tag.
-						if (CollisionComponent.HitObject.tag == obj.ExcludeTag) {
+						if (tag == obj.ExcludeTag) {
 							break;
 						}
 						obj.ObjToEnable.SetActive(true);

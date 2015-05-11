@@ -6,15 +6,14 @@ using Rotorz.ReorderableList;
 namespace OneDayGame {
 
 	[CustomEditor(typeof(GameObjectActivate))]
-	public class GameObjectActivateEditor : GameComponentEditor {
+	public class GameObjectActivateEditor : Editor {
 
 		private SerializedProperty _collisionComponent;
 		/*private SerializedProperty _tagOption;
 		private SerializedProperty _tag;*/
 		private SerializedProperty _objsToEnable;
 
-		public override void OnEnable() {
-			base.OnEnable();
+		private void OnEnable() {
 			_collisionComponent = serializedObject.FindProperty("_collisionComponent");
 			/*_tagOption = serializedObject.FindProperty("_tagOption");
 			_tag = serializedObject.FindProperty("_tag");*/
