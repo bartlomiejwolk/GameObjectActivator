@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 namespace GameObjectActivator {
 
@@ -11,9 +12,17 @@ namespace GameObjectActivator {
         [SerializeField]
         private List<ObjectToEnable> objsToEnable = new List<ObjectToEnable>();
 
+        [SerializeField]
+        private UnityEvent gameObjectsEnabledCallback;
+
         public List<ObjectToEnable> ObjsToEnable {
             get { return objsToEnable; }
             set { objsToEnable = value; }
+        }
+
+        public UnityEvent GameObjectsEnabledCallback {
+            get { return gameObjectsEnabledCallback; }
+            set { gameObjectsEnabledCallback = value; }
         }
 
         /// Handle collision.
@@ -39,6 +48,8 @@ namespace GameObjectActivator {
                         break;
                 }
             }
+
+            GameObjectsEnabledCallback.Invoke();
         }
     }
 }
