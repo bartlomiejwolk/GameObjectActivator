@@ -5,8 +5,8 @@ using Rotorz.ReorderableList;
 
 namespace GameObjectActivatorEx {
 
-    [CustomEditor(typeof(GameObjectActivate))]
-    public class GameObjectActivateEditor : Editor {
+    [CustomEditor(typeof(GameObjectActivator))]
+    public class GameObjectActivatorEditor : Editor {
 
         private SerializedProperty objsToEnable;
         private SerializedProperty gameObjectsEnabledCallback;

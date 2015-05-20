@@ -7,7 +7,7 @@ namespace GameObjectActivatorEx {
 
     /// Enable child game object on collision with
     /// other game object.
-    public class GameObjectActivate : MonoBehaviour {
+    public class GameObjectActivator : MonoBehaviour {
 
         [SerializeField]
         private List<ObjectToEnable> objsToEnable = new List<ObjectToEnable>();
