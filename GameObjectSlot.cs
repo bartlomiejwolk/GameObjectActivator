@@ -12,29 +12,34 @@ namespace GameObjectActivatorEx {
     [System.Serializable]
     public class GameObjectSlot {
 
-        /// Game object.
-        [SerializeField]
-        private GameObject _objToEnable;
-        public GameObject ObjToEnable {
-            get { return _objToEnable; }
-            set { _objToEnable = value; }
-        }
-
+        #region FIELDS
         /// Select to include or exclude a given tag.
         [SerializeField]
         private TagOptions _tagOption;
-        public TagOptions TagOption {
-            get { return _tagOption; }
-        }
 
         /// On collision with objects with this tag
         /// the object won't be enabled.
         [SerializeField]
         private string _tag;
+
+        /// Game object.
+        [SerializeField]
+        private GameObject _objToEnable;
+        #endregion
+        #region PROPERTIES
         public string ExcludeTag {
             get { return _tag; }
             set { _tag = value; }
         }
+
+        public GameObject ObjToEnable {
+            get { return _objToEnable; }
+            set { _objToEnable = value; }
+        }
+        public TagOptions TagOption {
+            get { return _tagOption; }
+        }
+        #endregion
     }
 
 }
