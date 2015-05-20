@@ -5,12 +5,12 @@
 
 using UnityEngine;
 
+// todo convert comments to xml
 namespace GameObjectActivatorEx {
 
     /// Object to enable.
     [System.Serializable]
-    // todo rename to ObjectSlot 
-    public class ObjectToEnable {
+    public class GameObjectSlot {
 
         /// Game object.
         [SerializeField]

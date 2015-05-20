@@ -16,7 +16,7 @@ namespace GameObjectActivatorEx {
 
         #region FIELDS
         [SerializeField]
-        private List<ObjectToEnable> objectsToEnable = new List<ObjectToEnable>();
+        private List<GameObjectSlot> objectsToEnable = new List<GameObjectSlot>();
 
         /// <summary>
         /// Callback executed after all GOs were handled.
@@ -27,7 +27,7 @@ namespace GameObjectActivatorEx {
         #endregion
 
         #region PROPERTIES
-        public List<ObjectToEnable> ObjectsToEnable {
+        public List<GameObjectSlot> ObjectsToEnable {
             get { return objectsToEnable; }
             set { objectsToEnable = value; }
         }
@@ -43,7 +43,7 @@ namespace GameObjectActivatorEx {
         public void Activate(RaycastHit hitInfo) {
             var hitGOTag = hitInfo.transform.gameObject.tag;
 
-            foreach (ObjectToEnable obj in ObjectsToEnable) {
+            foreach (GameObjectSlot obj in ObjectsToEnable) {
                 switch (obj.TagOption) {
                     case TagOptions.Include:
                         if (hitGOTag != obj.ExcludeTag) {

@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace GameObjectActivatorEx {
 
-    [CustomPropertyDrawer(typeof (ObjectToEnable))]
+    [CustomPropertyDrawer(typeof (GameObjectSlot))]
     public class ObjectToEnableDrawer : PropertyDrawer {
 
         private const float _rows = 2;
