@@ -12,14 +12,14 @@ namespace GameObjectActivatorEx {
     [CustomPropertyDrawer(typeof (GameObjectSlot))]
     public class ObjectToEnableDrawer : PropertyDrawer {
 
-        private const float _rows = 2;
+        private const float Rows = 2;
 
         public override float GetPropertyHeight(
             SerializedProperty property,
             GUIContent label) {
             return base.GetPropertyHeight(property, label)
-                   * _rows // Each row is 16 px high.
-                   + (_rows - 1) * 3; // Add 3 px for spece between rows.
+                   * Rows // Each row is 16 px high.
+                   + (Rows - 1) * 3; // Add 3 px for spece between rows.
         }
 
         public override void OnGUI(
