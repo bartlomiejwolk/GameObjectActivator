@@ -14,13 +14,13 @@ namespace GameObjectActivatorEx {
     public class GameObjectActivatorEditor : Editor {
 
         #region SERIALIZED PROPERTIES
-        private SerializedProperty objsToEnable;
+        private SerializedProperty objectsToEnable;
         private SerializedProperty gameObjectsEnabledCallback;
         #endregion
         #region UNITY MESSAGES
 
         private void OnEnable() {
-            objsToEnable = serializedObject.FindProperty("objsToEnable");
+            objectsToEnable = serializedObject.FindProperty("objectsToEnable");
             gameObjectsEnabledCallback =
                 serializedObject.FindProperty("gameObjectsEnabledCallback");
         }
@@ -29,7 +29,7 @@ namespace GameObjectActivatorEx {
             serializedObject.Update();
 
             ReorderableListGUI.Title("Objects to enable");
-            ReorderableListGUI.ListField(objsToEnable);
+            ReorderableListGUI.ListField(objectsToEnable);
 
             EditorGUILayout.Space();
 

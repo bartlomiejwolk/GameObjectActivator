@@ -16,7 +16,7 @@ namespace GameObjectActivatorEx {
 
         #region FIELDS
         [SerializeField]
-        private List<ObjectToEnable> objsToEnable = new List<ObjectToEnable>();
+        private List<ObjectToEnable> objectsToEnable = new List<ObjectToEnable>();
 
         [SerializeField]
         private UnityEvent gameObjectsEnabledCallback;
@@ -24,9 +24,9 @@ namespace GameObjectActivatorEx {
         #endregion
 
         #region PROPERTIES
-        public List<ObjectToEnable> ObjsToEnable {
-            get { return objsToEnable; }
-            set { objsToEnable = value; }
+        public List<ObjectToEnable> ObjectsToEnable {
+            get { return objectsToEnable; }
+            set { objectsToEnable = value; }
         }
 
         public UnityEvent GameObjectsEnabledCallback {
@@ -41,7 +41,7 @@ namespace GameObjectActivatorEx {
         public void OnCollisionEnable(RaycastHit hitInfo) {
             var hitGOTag = hitInfo.transform.gameObject.tag;
 
-            foreach (ObjectToEnable obj in ObjsToEnable) {
+            foreach (ObjectToEnable obj in ObjectsToEnable) {
                 switch (obj.TagOption) {
                     case TagOptions.Include:
                         if (hitGOTag != obj.ExcludeTag) {
