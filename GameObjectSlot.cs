@@ -15,29 +15,29 @@ namespace GameObjectActivatorEx {
         #region FIELDS
         /// Select to include or exclude a given tag.
         [SerializeField]
-        private TagOptions _tagOption;
+        private TagOptions tagOption;
 
         /// On collision with objects with this tag
         /// the object won't be enabled.
         [SerializeField]
-        private string _tag;
+        private string tag;
 
         /// Game object.
         [SerializeField]
-        private GameObject _objToEnable;
+        private GameObject objToEnable;
         #endregion
         #region PROPERTIES
         public string ExcludeTag {
-            get { return _tag; }
-            set { _tag = value; }
+            get { return tag; }
+            set { tag = value; }
         }
 
         public GameObject ObjToEnable {
-            get { return _objToEnable; }
-            set { _objToEnable = value; }
+            get { return objToEnable; }
+            set { objToEnable = value; }
         }
         public TagOptions TagOption {
-            get { return _tagOption; }
+            get { return tagOption; }
         }
         #endregion
     }
