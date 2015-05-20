@@ -1,6 +1,6 @@
 # GameObjectActivator
 
-*GameObjectActivator* extension for Unity. Use it to enable set of GOs under specified conditions.
+*GameObjectActivator* extension for Unity. Use it to enable set of game objects under specified conditions.
 
 Licensed under MIT license. See LICENSE file in the project root folder.   
 Extensions with version below 1.0.0 are considered to be pre/alpha and may not work properly.
@@ -11,7 +11,7 @@ Extensions with version below 1.0.0 are considered to be pre/alpha and may not w
 
 * Enable multiple game object at once.
 * Specify include/exclude tag.
-* Add multiple callbacks to be executed after all game object were handled.
+* Add multiple callbacks to be executed after all game object are handled.
 
 ## Resources
 
