@@ -18,6 +18,9 @@ namespace GameObjectActivatorEx {
         [SerializeField]
         private List<ObjectToEnable> objectsToEnable = new List<ObjectToEnable>();
 
+        /// <summary>
+        /// Callback executed after all GOs were handled.
+        /// </summary>
         [SerializeField]
         private UnityEvent gameObjectsActivatedCallback;
 

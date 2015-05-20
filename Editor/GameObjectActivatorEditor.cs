@@ -28,19 +28,28 @@ namespace GameObjectActivatorEx {
         public override void OnInspectorGUI() {
             serializedObject.Update();
 
-            ReorderableListGUI.Title("Objects to enable");
-            ReorderableListGUI.ListField(objectsToEnable);
+            DrawObjectsToEnableList();
 
             EditorGUILayout.Space();
 
+            DrawGameObjectsActivatedCallback();
+
+            serializedObject.ApplyModifiedProperties();
+        }
+
+        private void DrawGameObjectsActivatedCallback() {
             EditorGUILayout.PropertyField(
                 gameObjectsActivatedCallback,
                 new GUIContent(
                     "Callback",
                     "Callback executed after all GOs were enabled."));
-
-            serializedObject.ApplyModifiedProperties();
         }
+
+        private void DrawObjectsToEnableList() {
+            ReorderableListGUI.Title("Objects to enable");
+            ReorderableListGUI.ListField(objectsToEnable);
+        }
+
         #endregion
     }
 }
