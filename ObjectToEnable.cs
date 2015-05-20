@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameObjectActivator {
+namespace GameObjectActivatorEx {
 
     /// Object to enable.
     [System.Serializable]

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
 
-namespace GameObjectActivator {
+namespace GameObjectActivatorEx {
 
     /// Enable child game object on collision with
     /// other game object.

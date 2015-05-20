@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEditor;
 using Rotorz.ReorderableList;
 
-namespace GameObjectActivator {
+namespace GameObjectActivatorEx {
 
     [CustomEditor(typeof(GameObjectActivate))]
     public class GameObjectActivateEditor : Editor {

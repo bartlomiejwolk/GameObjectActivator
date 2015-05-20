@@ -2,7 +2,7 @@
 using UnityEditor;
 using System.Collections;
 
-namespace GameObjectActivator {
+namespace GameObjectActivatorEx {
 
     [CustomPropertyDrawer(typeof (ObjectToEnable))]
     public class ObjectToEnableDrawer : PropertyDrawer {

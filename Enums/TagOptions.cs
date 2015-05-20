@@ -1,4 +1,4 @@
-namespace GameObjectActivator {
+namespace GameObjectActivatorEx {
 
     public enum TagOptions { Include, Exclude }
 
