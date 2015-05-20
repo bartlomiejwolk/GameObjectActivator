@@ -14,12 +14,16 @@ namespace GameObjectActivatorEx {
     /// other game object.
     public class GameObjectActivator : MonoBehaviour {
 
+        #region FIELDS
         [SerializeField]
         private List<ObjectToEnable> objsToEnable = new List<ObjectToEnable>();
 
         [SerializeField]
         private UnityEvent gameObjectsEnabledCallback;
 
+        #endregion
+
+        #region PROPERTIES
         public List<ObjectToEnable> ObjsToEnable {
             get { return objsToEnable; }
             set { objsToEnable = value; }
@@ -29,7 +33,9 @@ namespace GameObjectActivatorEx {
             get { return gameObjectsEnabledCallback; }
             set { gameObjectsEnabledCallback = value; }
         }
+        #endregion
 
+        #region METHODS
         /// Handle collision.
         // todo refactor
         public void OnCollisionEnable(RaycastHit hitInfo) {
@@ -56,5 +62,6 @@ namespace GameObjectActivatorEx {
 
             GameObjectsEnabledCallback.Invoke();
         }
+        #endregion
     }
 }

@@ -13,8 +13,11 @@ namespace GameObjectActivatorEx {
     [CustomEditor(typeof(GameObjectActivator))]
     public class GameObjectActivatorEditor : Editor {
 
+        #region SERIALIZED PROPERTIES
         private SerializedProperty objsToEnable;
         private SerializedProperty gameObjectsEnabledCallback;
+        #endregion
+        #region UNITY MESSAGES
 
         private void OnEnable() {
             objsToEnable = serializedObject.FindProperty("objsToEnable");
@@ -38,5 +41,6 @@ namespace GameObjectActivatorEx {
 
             serializedObject.ApplyModifiedProperties();
         }
+        #endregion
     }
 }
