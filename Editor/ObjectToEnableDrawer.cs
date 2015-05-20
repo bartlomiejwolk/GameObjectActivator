@@ -27,11 +27,11 @@ namespace GameObjectActivatorEx {
             GUIContent label) {
 
             var objToEnable =
-                prop.FindPropertyRelative("_objToEnable");
+                prop.FindPropertyRelative("objToEnable");
             var tagOption =
-                prop.FindPropertyRelative("_tagOption");
+                prop.FindPropertyRelative("tagOption");
             var tag =
-                prop.FindPropertyRelative("_tag");
+                prop.FindPropertyRelative("tag");
 
             // Draw objToEnable field.
             EditorGUIUtility.labelWidth = 85;
