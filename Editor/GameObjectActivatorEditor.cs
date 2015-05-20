@@ -1,31 +1,25 @@
 ﻿// Copyright (c) 2015 Bartlomiej Wolk (bartlomiejwolk@gmail.com)
-//  
-// This file is part of the GameObjectActivator extension for Unity.
-// Licensed under the MIT license. See LICENSE file in the project root folder.
+// 
+// This file is part of the GameObjectActivator extension for Unity. Licensed
+// under the MIT license. See LICENSE file in the project root folder.
 
-using UnityEngine;
-using System.Collections;
-using UnityEditor;
 using Rotorz.ReorderableList;
+using UnityEditor;
+using UnityEngine;
 
 namespace GameObjectActivatorEx {
 
-    [CustomEditor(typeof(GameObjectActivator))]
+    [CustomEditor(typeof (GameObjectActivator))]
     public class GameObjectActivatorEditor : Editor {
-
         #region SERIALIZED PROPERTIES
-        private SerializedProperty objectsToEnable;
-        private SerializedProperty gameObjectsActivatedCallback;
-        private SerializedProperty description;
-        #endregion
-        #region UNITY MESSAGES
 
-        private void OnEnable() {
-            objectsToEnable = serializedObject.FindProperty("objectsToEnable");
-            gameObjectsActivatedCallback =
-                serializedObject.FindProperty("gameObjectsActivatedCallback");
-            description = serializedObject.FindProperty("description");
-        }
+        private SerializedProperty description;
+        private SerializedProperty gameObjectsActivatedCallback;
+        private SerializedProperty objectsToEnable;
+
+        #endregion SERIALIZED PROPERTIES
+
+        #region UNITY MESSAGES
 
         public override void OnInspectorGUI() {
             serializedObject.Update();
@@ -34,7 +28,7 @@ namespace GameObjectActivatorEx {
             DrawDescriptionTextArea();
 
             EditorGUILayout.Space();
-            
+
             DrawObjectsToEnableList();
 
             EditorGUILayout.Space();
@@ -57,8 +51,21 @@ namespace GameObjectActivatorEx {
             ReorderableListGUI.ListField(objectsToEnable);
         }
 
-        #endregion
+        private void OnEnable() {
+            objectsToEnable = serializedObject.FindProperty("objectsToEnable");
+            gameObjectsActivatedCallback =
+                serializedObject.FindProperty("gameObjectsActivatedCallback");
+            description = serializedObject.FindProperty("description");
+        }
+
+        #endregion UNITY MESSAGES
+
         #region INSPECTOR CONTROLS
+
+        private void DrawDescriptionTextArea() {
+            description.stringValue = EditorGUILayout.TextArea(
+                description.stringValue);
+        }
 
         private void DrawVersionLabel() {
             EditorGUILayout.LabelField(
@@ -68,12 +75,7 @@ namespace GameObjectActivatorEx {
                     GameObjectActivator.Extension));
         }
 
-        private void DrawDescriptionTextArea() {
-            description.stringValue = EditorGUILayout.TextArea(
-                description.stringValue);
-        }
-
-        #endregion INSPECTOR
+        #endregion INSPECTOR CONTROLS
 
         #region METHODS
 
@@ -81,10 +83,11 @@ namespace GameObjectActivatorEx {
         private static void AddEntryToComponentMenu() {
             if (Selection.activeGameObject != null) {
                 Selection.activeGameObject.AddComponent(
-                    typeof(GameObjectActivator));
+                    typeof (GameObjectActivator));
             }
         }
 
         #endregion METHODS
     }
+
 }
