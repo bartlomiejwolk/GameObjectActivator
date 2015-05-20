@@ -1,11 +1,10 @@
 ﻿// Copyright (c) 2015 Bartlomiej Wolk (bartlomiejwolk@gmail.com)
-//  
-// This file is part of the GameObjectActivator extension for Unity.
-// Licensed under the MIT license. See LICENSE file in the project root folder.
+// 
+// This file is part of the GameObjectActivator extension for Unity. Licensed
+// under the MIT license. See LICENSE file in the project root folder.
 
-using UnityEngine;
 using UnityEditor;
-using System.Collections;
+using UnityEngine;
 
 namespace GameObjectActivatorEx {
 
@@ -27,11 +26,11 @@ namespace GameObjectActivatorEx {
             SerializedProperty prop,
             GUIContent label) {
 
-            SerializedProperty objToEnable =
+            var objToEnable =
                 prop.FindPropertyRelative("_objToEnable");
-            SerializedProperty tagOption =
+            var tagOption =
                 prop.FindPropertyRelative("_tagOption");
-            SerializedProperty tag =
+            var tag =
                 prop.FindPropertyRelative("_tag");
 
             // Draw objToEnable field.
