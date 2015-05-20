@@ -15,14 +15,14 @@ namespace GameObjectActivatorEx {
 
         #region SERIALIZED PROPERTIES
         private SerializedProperty objectsToEnable;
-        private SerializedProperty gameObjectsEnabledCallback;
+        private SerializedProperty gameObjectsActivatedCallback;
         #endregion
         #region UNITY MESSAGES
 
         private void OnEnable() {
             objectsToEnable = serializedObject.FindProperty("objectsToEnable");
-            gameObjectsEnabledCallback =
-                serializedObject.FindProperty("gameObjectsEnabledCallback");
+            gameObjectsActivatedCallback =
+                serializedObject.FindProperty("gameObjectsActivatedCallback");
         }
 
         public override void OnInspectorGUI() {
@@ -34,7 +34,7 @@ namespace GameObjectActivatorEx {
             EditorGUILayout.Space();
 
             EditorGUILayout.PropertyField(
-                gameObjectsEnabledCallback,
+                gameObjectsActivatedCallback,
                 new GUIContent(
                     "Callback",
                     "Callback executed after all GOs were enabled."));
