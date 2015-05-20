@@ -14,10 +14,20 @@ namespace GameObjectActivatorEx {
     /// other game object.
     public class GameObjectActivator : MonoBehaviour {
 
+        #region CONSTANTS
+
+        public const string Version = "v0.1.0";
+        public const string Extension = "GameObjectActivator";
+
+        #endregion
         #region FIELDS
+        [SerializeField]
+        private string description = "Description";
+ 
         [SerializeField]
         private List<GameObjectSlot> objectsToEnable = new List<GameObjectSlot>();
 
+        // todo move comments to properties
         /// <summary>
         /// Callback executed after all GOs were handled.
         /// </summary>
@@ -36,9 +46,16 @@ namespace GameObjectActivatorEx {
             get { return gameObjectsActivatedCallback; }
             set { gameObjectsActivatedCallback = value; }
         }
+
+        public string Description {
+            get { return description; }
+            set { description = value; }
+        }
+
         #endregion
 
         #region METHODS
+        // todo add doc
         /// Handle collision.
         public void Activate(RaycastHit hitInfo) {
             var hitGOTag = hitInfo.transform.gameObject.tag;

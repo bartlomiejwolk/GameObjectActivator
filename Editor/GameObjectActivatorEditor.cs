@@ -16,6 +16,7 @@ namespace GameObjectActivatorEx {
         #region SERIALIZED PROPERTIES
         private SerializedProperty objectsToEnable;
         private SerializedProperty gameObjectsActivatedCallback;
+        private SerializedProperty description;
         #endregion
         #region UNITY MESSAGES
 
@@ -23,11 +24,17 @@ namespace GameObjectActivatorEx {
             objectsToEnable = serializedObject.FindProperty("objectsToEnable");
             gameObjectsActivatedCallback =
                 serializedObject.FindProperty("gameObjectsActivatedCallback");
+            description = serializedObject.FindProperty("description");
         }
 
         public override void OnInspectorGUI() {
             serializedObject.Update();
 
+            DrawVersionLabel();
+            DrawDescriptionTextArea();
+
+            EditorGUILayout.Space();
+            
             DrawObjectsToEnableList();
 
             EditorGUILayout.Space();
@@ -51,5 +58,33 @@ namespace GameObjectActivatorEx {
         }
 
         #endregion
+        #region INSPECTOR CONTROLS
+
+        private void DrawVersionLabel() {
+            EditorGUILayout.LabelField(
+                string.Format(
+                    "{0} ({1})",
+                    GameObjectActivator.Version,
+                    GameObjectActivator.Extension));
+        }
+
+        private void DrawDescriptionTextArea() {
+            description.stringValue = EditorGUILayout.TextArea(
+                description.stringValue);
+        }
+
+        #endregion INSPECTOR
+
+        #region METHODS
+
+        [MenuItem("Component/GameObjectActivator")]
+        private static void AddEntryToComponentMenu() {
+            if (Selection.activeGameObject != null) {
+                Selection.activeGameObject.AddComponent(
+                    typeof(GameObjectActivator));
+            }
+        }
+
+        #endregion METHODS
     }
 }
