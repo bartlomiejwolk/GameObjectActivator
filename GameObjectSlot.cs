@@ -1,13 +1,13 @@
 ﻿// Copyright (c) 2015 Bartlomiej Wolk (bartlomiejwolk@gmail.com)
 // 
-// This file is part of the GameObjectActivator extension for Unity. Licensed
+// This file is part of the OnCollisionActivate extension for Unity. Licensed
 // under the MIT license. See LICENSE file in the project root folder.
 
 using UnityEngine;
 
 // todo convert comments to xml
 
-namespace GameObjectActivatorEx {
+namespace OnCollisionActivateEx {
 
     /// Object to enable.
     [System.Serializable]

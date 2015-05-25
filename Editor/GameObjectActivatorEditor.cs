@@ -1,16 +1,16 @@
 ﻿// Copyright (c) 2015 Bartlomiej Wolk (bartlomiejwolk@gmail.com)
 // 
-// This file is part of the GameObjectActivator extension for Unity. Licensed
+// This file is part of the OnCollisionActivate extension for Unity. Licensed
 // under the MIT license. See LICENSE file in the project root folder.
 
 using Rotorz.ReorderableList;
 using UnityEditor;
 using UnityEngine;
 
-namespace GameObjectActivatorEx {
+namespace OnCollisionActivateEx {
 
-    [CustomEditor(typeof (GameObjectActivator))]
-    public class GameObjectActivatorEditor : Editor {
+    [CustomEditor(typeof (OnCollisionActivate))]
+    public class OnCollisionActivateEditor : Editor {
         #region SERIALIZED PROPERTIES
 
         private SerializedProperty description;
@@ -71,19 +71,19 @@ namespace GameObjectActivatorEx {
             EditorGUILayout.LabelField(
                 string.Format(
                     "{0} ({1})",
-                    GameObjectActivator.Version,
-                    GameObjectActivator.Extension));
+                    OnCollisionActivate.Version,
+                    OnCollisionActivate.Extension));
         }
 
         #endregion INSPECTOR CONTROLS
 
         #region METHODS
 
-        [MenuItem("Component/GameObjectActivator")]
+        [MenuItem("Component/OnCollisionActivate")]
         private static void AddEntryToComponentMenu() {
             if (Selection.activeGameObject != null) {
                 Selection.activeGameObject.AddComponent(
-                    typeof (GameObjectActivator));
+                    typeof (OnCollisionActivate));
             }
         }
 
