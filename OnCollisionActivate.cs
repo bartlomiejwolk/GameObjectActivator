@@ -9,6 +9,12 @@ using UnityEngine.Events;
 
 namespace OnCollisionActivateEx {
 
+    // todo extract
+    /// <summary>
+    /// What should be subject to inclusion/exclusion.
+    /// </summary>
+    public enum InludeExcludeType { Tag, Layer }
+
     /// Enable child game object on collision with other game object.
     public class OnCollisionActivate : MonoBehaviour {
         #region CONSTANTS
