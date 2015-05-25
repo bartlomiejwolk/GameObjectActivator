@@ -18,12 +18,18 @@ namespace OnCollisionActivateEx {
         [SerializeField]
         private GameObject objToEnable;
 
-        /// On collision with objects with this tag the object won't be
-        /// enabled.
         [SerializeField]
         private string tag;
 
+        /// <summary>
+        /// Defines type of condition used to decide if specified game object
+        /// should be enabled.
+        /// </summary>
+        [SerializeField]
+        private InludeExcludeType includeExcludeType;
+
         /// Select to include or exclude a given tag.
+        // todo rename to inclusionOption
         [SerializeField]
         private TagOptions tagOption;
 
@@ -43,6 +49,11 @@ namespace OnCollisionActivateEx {
 
         public TagOptions TagOption {
             get { return tagOption; }
+        }
+
+        public InludeExcludeType IncludeExcludeType {
+            get { return includeExcludeType; }
+            set { includeExcludeType = value; }
         }
 
         #endregion PROPERTIES

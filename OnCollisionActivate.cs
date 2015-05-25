@@ -36,6 +36,9 @@ namespace OnCollisionActivateEx {
         [SerializeField]
         private UnityEvent gameObjectsActivatedCallback;
 
+        /// <summary>
+        /// List of game objects that may be enabled.
+        /// </summary>
         [SerializeField]
         private List<GameObjectSlot> objectsToEnable =
             new List<GameObjectSlot>();
