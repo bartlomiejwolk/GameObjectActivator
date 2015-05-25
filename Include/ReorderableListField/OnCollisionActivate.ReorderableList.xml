@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Editor.ReorderableList</name>
+        <name>OnCollisionActivate.ReorderableList</name>
     </assembly>
     <members>
         <member name="T:OnCollisionActivateEx.ElementAdderMeta">
