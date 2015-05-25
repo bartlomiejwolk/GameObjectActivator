@@ -3,7 +3,6 @@
 // This file is part of the OnCollisionActivate extension for Unity. Licensed
 // under the MIT license. See LICENSE file in the project root folder.
 
-using Rotorz.ReorderableList;
 using UnityEditor;
 using UnityEngine;
 

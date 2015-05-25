@@ -4,15 +4,15 @@
         <name>Editor.ReorderableList</name>
     </assembly>
     <members>
-        <member name="T:OnCollisionActivate.ElementAdderMeta">
+        <member name="T:OnCollisionActivateEx.ElementAdderMeta">
             <summary>
             Provides meta information which is useful when creating new implementations of
-            the <see cref="T:OnCollisionActivate.IElementAdderMenuBuilder`1"/> interface.
+            the <see cref="T:OnCollisionActivateEx.IElementAdderMenuBuilder`1"/> interface.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ElementAdderMeta.GetMenuCommandTypes``1(System.Type)">
+        <member name="M:OnCollisionActivateEx.ElementAdderMeta.GetMenuCommandTypes``1(System.Type)">
             <summary>
-            Gets an array of the <see cref="T:OnCollisionActivate.IElementAdderMenuCommand`1"/> types
+            Gets an array of the <see cref="T:OnCollisionActivateEx.IElementAdderMenuCommand`1"/> types
             that are associated with the specified <paramref name="contractType"/>.
             </summary>
             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
@@ -23,24 +23,24 @@
             <exception cref="T:System.ArgumentNullException">
             If <paramref name="contractType"/> is <c>null</c>.
             </exception>
-            <seealso cref="M:OnCollisionActivate.ElementAdderMeta.GetMenuCommands``1(System.Type)"/>
+            <seealso cref="M:OnCollisionActivateEx.ElementAdderMeta.GetMenuCommands``1(System.Type)"/>
         </member>
-        <member name="M:OnCollisionActivate.ElementAdderMeta.GetMenuCommands``1(System.Type)">
+        <member name="M:OnCollisionActivateEx.ElementAdderMeta.GetMenuCommands``1(System.Type)">
             <summary>
-            Gets an array of <see cref="T:OnCollisionActivate.IElementAdderMenuCommand`1"/> instances
+            Gets an array of <see cref="T:OnCollisionActivateEx.IElementAdderMenuCommand`1"/> instances
             that are associated with the specified <paramref name="contractType"/>.
             </summary>
             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
             <param name="contractType">Contract type of addable elements.</param>
             <returns>
-            An array containing zero or more <see cref="T:OnCollisionActivate.IElementAdderMenuCommand`1"/> instances.
+            An array containing zero or more <see cref="T:OnCollisionActivateEx.IElementAdderMenuCommand`1"/> instances.
             </returns>
             <exception cref="T:System.ArgumentNullException">
             If <paramref name="contractType"/> is <c>null</c>.
             </exception>
-            <seealso cref="M:OnCollisionActivate.ElementAdderMeta.GetMenuCommandTypes``1(System.Type)"/>
+            <seealso cref="M:OnCollisionActivateEx.ElementAdderMeta.GetMenuCommandTypes``1(System.Type)"/>
         </member>
-        <member name="M:OnCollisionActivate.ElementAdderMeta.GetConcreteElementTypes(System.Type,System.Func{System.Type,System.Boolean}[])">
+        <member name="M:OnCollisionActivateEx.ElementAdderMeta.GetConcreteElementTypes(System.Type,System.Func{System.Type,System.Boolean}[])">
             <summary>
             Gets a filtered array of the concrete element types that implement the
             specified <paramref name="contractType"/>.
@@ -57,9 +57,9 @@
             <exception cref="T:System.ArgumentNullException">
             If <paramref name="contractType"/> is <c>null</c>.
             </exception>
-            <seealso cref="M:OnCollisionActivate.ElementAdderMeta.GetConcreteElementTypes(System.Type)"/>
+            <seealso cref="M:OnCollisionActivateEx.ElementAdderMeta.GetConcreteElementTypes(System.Type)"/>
         </member>
-        <member name="M:OnCollisionActivate.ElementAdderMeta.GetConcreteElementTypes(System.Type)">
+        <member name="M:OnCollisionActivateEx.ElementAdderMeta.GetConcreteElementTypes(System.Type)">
             <summary>
             Gets an array of all the concrete element types that implement the specified
             <paramref name="contractType"/>.
@@ -71,18 +71,18 @@
             <exception cref="T:System.ArgumentNullException">
             If <paramref name="contractType"/> is <c>null</c>.
             </exception>
-            <seealso cref="M:OnCollisionActivate.ElementAdderMeta.GetConcreteElementTypes(System.Type,System.Func{System.Type,System.Boolean}[])"/>
+            <seealso cref="M:OnCollisionActivateEx.ElementAdderMeta.GetConcreteElementTypes(System.Type,System.Func{System.Type,System.Boolean}[])"/>
         </member>
-        <member name="T:OnCollisionActivate.IElementAdderMenuCommand`1">
+        <member name="T:OnCollisionActivateEx.IElementAdderMenuCommand`1">
             <summary>
-            Interface for a menu command that can be included in an <see cref="T:OnCollisionActivate.IElementAdderMenu"/>
-            either by annotating an implementation of the <see cref="T:OnCollisionActivate.IElementAdderMenuCommand`1"/>
-            interface with <see cref="T:OnCollisionActivate.ElementAdderMenuCommandAttribute"/> or directly by
-            calling <see cref="M:OnCollisionActivate.IElementAdderMenuBuilder`1.AddCustomCommand(OnCollisionActivate.IElementAdderMenuCommand{`0})"/>.
+            Interface for a menu command that can be included in an <see cref="T:OnCollisionActivateEx.IElementAdderMenu"/>
+            either by annotating an implementation of the <see cref="T:OnCollisionActivateEx.IElementAdderMenuCommand`1"/>
+            interface with <see cref="T:OnCollisionActivateEx.ElementAdderMenuCommandAttribute"/> or directly by
+            calling <see cref="M:OnCollisionActivateEx.IElementAdderMenuBuilder`1.AddCustomCommand(OnCollisionActivateEx.IElementAdderMenuCommand{`0})"/>.
             </summary>
             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
         </member>
-        <member name="M:OnCollisionActivate.IElementAdderMenuCommand`1.CanExecute(OnCollisionActivate.IElementAdder{`0})">
+        <member name="M:OnCollisionActivateEx.IElementAdderMenuCommand`1.CanExecute(OnCollisionActivateEx.IElementAdder{`0})">
             <summary>
             Determines whether the command can be executed.
             </summary>
@@ -92,22 +92,22 @@
             A value of <c>true</c> if the command can execute; otherwise, <c>false</c>.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.IElementAdderMenuCommand`1.Execute(OnCollisionActivate.IElementAdder{`0})">
+        <member name="M:OnCollisionActivateEx.IElementAdderMenuCommand`1.Execute(OnCollisionActivateEx.IElementAdder{`0})">
             <summary>
             Executes the command.
             </summary>
             <param name="elementAdder">The associated element adder provides access to
             the <typeparamref name="TContext"/> instance.</param>
         </member>
-        <member name="P:OnCollisionActivate.IElementAdderMenuCommand`1.Content">
+        <member name="P:OnCollisionActivateEx.IElementAdderMenuCommand`1.Content">
             <summary>
             Gets the content of the menu command.
             </summary>
         </member>
-        <member name="T:OnCollisionActivate.ElementAdderMenuCommandAttribute">
+        <member name="T:OnCollisionActivateEx.ElementAdderMenuCommandAttribute">
              <summary>
-             Annotate <see cref="T:OnCollisionActivate.IElementAdderMenuCommand`1"/> implementations with a
-             <see cref="T:OnCollisionActivate.ElementAdderMenuCommandAttribute"/> to associate it with the contract
+             Annotate <see cref="T:OnCollisionActivateEx.IElementAdderMenuCommand`1"/> implementations with a
+             <see cref="T:OnCollisionActivateEx.ElementAdderMenuCommandAttribute"/> to associate it with the contract
              type of addable elements.
              </summary>
              <example>
@@ -147,34 +147,34 @@
              ]]></code>
              </example>
         </member>
-        <member name="M:OnCollisionActivate.ElementAdderMenuCommandAttribute.#ctor(System.Type)">
+        <member name="M:OnCollisionActivateEx.ElementAdderMenuCommandAttribute.#ctor(System.Type)">
             <summary>
-            Initializes a new instance of the <see cref="T:OnCollisionActivate.ElementAdderMenuCommandAttribute"/> class.
+            Initializes a new instance of the <see cref="T:OnCollisionActivateEx.ElementAdderMenuCommandAttribute"/> class.
             </summary>
             <param name="contractType">Contract type of addable elements.</param>
         </member>
-        <member name="P:OnCollisionActivate.ElementAdderMenuCommandAttribute.ContractType">
+        <member name="P:OnCollisionActivateEx.ElementAdderMenuCommandAttribute.ContractType">
             <summary>
             Gets the contract type of addable elements.
             </summary>
         </member>
-        <member name="T:OnCollisionActivate.IElementAdderMenuBuilder`1">
+        <member name="T:OnCollisionActivateEx.IElementAdderMenuBuilder`1">
             <summary>
-            Interface for building an <see cref="T:OnCollisionActivate.IElementAdderMenu"/>.
+            Interface for building an <see cref="T:OnCollisionActivateEx.IElementAdderMenu"/>.
             </summary>
             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
         </member>
-        <member name="M:OnCollisionActivate.IElementAdderMenuBuilder`1.SetContractType(System.Type)">
+        <member name="M:OnCollisionActivateEx.IElementAdderMenuBuilder`1.SetContractType(System.Type)">
             <summary>
-            Sets contract type of the elements that can be included in the <see cref="T:OnCollisionActivate.IElementAdderMenu"/>.
+            Sets contract type of the elements that can be included in the <see cref="T:OnCollisionActivateEx.IElementAdderMenu"/>.
             Only non-abstract class types that are assignable from the <paramref name="contractType"/>
             will be included in the built menu.
             </summary>
             <param name="contractType">Contract type of addable elements.</param>
         </member>
-        <member name="M:OnCollisionActivate.IElementAdderMenuBuilder`1.SetElementAdder(OnCollisionActivate.IElementAdder{`0})">
+        <member name="M:OnCollisionActivateEx.IElementAdderMenuBuilder`1.SetElementAdder(OnCollisionActivateEx.IElementAdder{`0})">
             <summary>
-            Set the <see cref="T:OnCollisionActivate.IElementAdder`1"/> implementation which is used
+            Set the <see cref="T:OnCollisionActivateEx.IElementAdder`1"/> implementation which is used
             when adding new elements to the context object.
             </summary>
             <remarks>
@@ -183,7 +183,7 @@
             </remarks>
             <param name="elementAdder">Element adder.</param>
         </member>
-        <member name="M:OnCollisionActivate.IElementAdderMenuBuilder`1.SetTypeDisplayNameFormatter(System.Func{System.Type,System.String})">
+        <member name="M:OnCollisionActivateEx.IElementAdderMenuBuilder`1.SetTypeDisplayNameFormatter(System.Func{System.Type,System.String})">
             <summary>
             Set the function that formats the display of type names in the user interface.
             </summary>
@@ -193,7 +193,7 @@
             </remarks>
             <param name="formatter">Function that formats display name of type; or <c>null</c>.</param>
         </member>
-        <member name="M:OnCollisionActivate.IElementAdderMenuBuilder`1.AddTypeFilter(System.Func{System.Type,System.Boolean})">
+        <member name="M:OnCollisionActivateEx.IElementAdderMenuBuilder`1.AddTypeFilter(System.Func{System.Type,System.Boolean})">
             <summary>
             Adds a filter function which determines whether types can be included or
             whether they need to be excluded.
@@ -207,7 +207,7 @@
             If <paramref name="typeFilter"/> is <c>null</c>.
             </exception>
         </member>
-        <member name="M:OnCollisionActivate.IElementAdderMenuBuilder`1.AddCustomCommand(OnCollisionActivate.IElementAdderMenuCommand{`0})">
+        <member name="M:OnCollisionActivateEx.IElementAdderMenuBuilder`1.AddCustomCommand(OnCollisionActivateEx.IElementAdderMenuCommand{`0})">
             <summary>
             Adds a custom command to the menu.
             </summary>
@@ -216,20 +216,20 @@
             If <paramref name="command"/> is <c>null</c>.
             </exception>
         </member>
-        <member name="M:OnCollisionActivate.IElementAdderMenuBuilder`1.GetMenu">
+        <member name="M:OnCollisionActivateEx.IElementAdderMenuBuilder`1.GetMenu">
             <summary>
-            Builds and returns a new <see cref="T:OnCollisionActivate.IElementAdderMenu"/> instance.
+            Builds and returns a new <see cref="T:OnCollisionActivateEx.IElementAdderMenu"/> instance.
             </summary>
             <returns>
-            A new <see cref="T:OnCollisionActivate.IElementAdderMenu"/> instance each time the method is invoked.
+            A new <see cref="T:OnCollisionActivateEx.IElementAdderMenu"/> instance each time the method is invoked.
             </returns>
         </member>
-        <member name="T:OnCollisionActivate.IElementAdderMenu">
+        <member name="T:OnCollisionActivateEx.IElementAdderMenu">
             <summary>
             Interface for a menu interface.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.IElementAdderMenu.DropDown(UnityEngine.Rect)">
+        <member name="M:OnCollisionActivateEx.IElementAdderMenu.DropDown(UnityEngine.Rect)">
             <summary>
             Displays the drop-down menu inside an editor GUI.
             </summary>
@@ -239,7 +239,7 @@
             </remarks>
             <param name="position">Position of menu button in the GUI.</param>
         </member>
-        <member name="P:OnCollisionActivate.IElementAdderMenu.IsEmpty">
+        <member name="P:OnCollisionActivateEx.IElementAdderMenu.IsEmpty">
             <summary>
             Gets a value indicating whether the menu contains any items.
             </summary>
@@ -247,9 +247,9 @@
             <c>true</c> if the menu contains one or more items; otherwise, <c>false</c>.
             </value>
         </member>
-        <member name="T:OnCollisionActivate.ElementAdderMenuBuilder">
+        <member name="T:OnCollisionActivateEx.ElementAdderMenuBuilder">
              <summary>
-             Factory methods that create <see cref="T:OnCollisionActivate.IElementAdderMenuBuilder`1"/>
+             Factory methods that create <see cref="T:OnCollisionActivateEx.IElementAdderMenuBuilder`1"/>
              instances that can then be used to build element adder menus.
              </summary>
              <example>
@@ -317,37 +317,37 @@
              ]]></code>
              </example>
         </member>
-        <member name="M:OnCollisionActivate.ElementAdderMenuBuilder.For``1">
+        <member name="M:OnCollisionActivateEx.ElementAdderMenuBuilder.For``1">
             <summary>
-            Gets a <see cref="T:OnCollisionActivate.IElementAdderMenuBuilder`1"/> to build an element
+            Gets a <see cref="T:OnCollisionActivateEx.IElementAdderMenuBuilder`1"/> to build an element
             adder menu for a context object of the type <typeparamref name="TContext"/>.
             </summary>
             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
             <returns>
-            A new <see cref="T:OnCollisionActivate.IElementAdderMenuBuilder`1"/> instance.
+            A new <see cref="T:OnCollisionActivateEx.IElementAdderMenuBuilder`1"/> instance.
             </returns>
-            <seealso cref="M:OnCollisionActivate.IElementAdderMenuBuilder`1.SetContractType(System.Type)"/>
+            <seealso cref="M:OnCollisionActivateEx.IElementAdderMenuBuilder`1.SetContractType(System.Type)"/>
         </member>
-        <member name="M:OnCollisionActivate.ElementAdderMenuBuilder.For``1(System.Type)">
+        <member name="M:OnCollisionActivateEx.ElementAdderMenuBuilder.For``1(System.Type)">
             <summary>
-            Gets a <see cref="T:OnCollisionActivate.IElementAdderMenuBuilder`1"/> to build an element
+            Gets a <see cref="T:OnCollisionActivateEx.IElementAdderMenuBuilder`1"/> to build an element
             adder menu for a context object of the type <typeparamref name="TContext"/>.
             </summary>
             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
             <param name="contractType">Contract type of addable elements.</param>
             <returns>
-            A new <see cref="T:OnCollisionActivate.IElementAdderMenuBuilder`1"/> instance.
+            A new <see cref="T:OnCollisionActivateEx.IElementAdderMenuBuilder`1"/> instance.
             </returns>
-            <seealso cref="M:OnCollisionActivate.IElementAdderMenuBuilder`1.SetContractType(System.Type)"/>
+            <seealso cref="M:OnCollisionActivateEx.IElementAdderMenuBuilder`1.SetContractType(System.Type)"/>
         </member>
-        <member name="T:OnCollisionActivate.IElementAdder`1">
+        <member name="T:OnCollisionActivateEx.IElementAdder`1">
             <summary>
             Interface for an object which adds elements to a context object of the type
             <typeparamref name="TContext"/>.
             </summary>
             <typeparam name="TContext">Type of the context object that elements can be added to.</typeparam>
         </member>
-        <member name="M:OnCollisionActivate.IElementAdder`1.CanAddElement(System.Type)">
+        <member name="M:OnCollisionActivateEx.IElementAdder`1.CanAddElement(System.Type)">
             <summary>
             Determines whether a new element of the specified <paramref name="type"/> can
             be added to the associated context object.
@@ -358,7 +358,7 @@
             otherwise, a value of <c>false</c>.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.IElementAdder`1.AddElement(System.Type)">
+        <member name="M:OnCollisionActivateEx.IElementAdder`1.AddElement(System.Type)">
             <summary>
             Adds an element of the specified <paramref name="type"/> to the associated
             context object.
@@ -368,12 +368,12 @@
             The new element.
             </returns>
         </member>
-        <member name="P:OnCollisionActivate.IElementAdder`1.Object">
+        <member name="P:OnCollisionActivateEx.IElementAdder`1.Object">
             <summary>
             Gets the context object.
             </summary>
         </member>
-        <member name="T:OnCollisionActivate.GenericListAdaptor`1">
+        <member name="T:OnCollisionActivateEx.GenericListAdaptor`1">
             <summary>
             Reorderable list adaptor for generic list.
             </summary>
@@ -387,12 +387,12 @@
             </remarks>
             <typeparam name="T">Type of list element.</typeparam>
         </member>
-        <member name="T:OnCollisionActivate.IReorderableListAdaptor">
+        <member name="T:OnCollisionActivateEx.IReorderableListAdaptor">
             <summary>
             Adaptor allowing reorderable list control to interface with list data.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.IReorderableListAdaptor.CanDrag(System.Int32)">
+        <member name="M:OnCollisionActivateEx.IReorderableListAdaptor.CanDrag(System.Int32)">
             <summary>
             Determines whether an item can be reordered by dragging mouse.
             </summary>
@@ -407,14 +407,14 @@
             A value of <c>true</c> if item can be dragged; otherwise <c>false</c>.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.IReorderableListAdaptor.CanRemove(System.Int32)">
+        <member name="M:OnCollisionActivateEx.IReorderableListAdaptor.CanRemove(System.Int32)">
             <summary>
             Determines whether an item can be removed from list.
             </summary>
             <remarks>
             <para>This should be a light-weight method since it will be used to determine
             whether remove button should be included for each item in list.</para>
-            <para>This is redundant when <see cref="F:OnCollisionActivate.ReorderableListFlags.HideRemoveButtons"/>
+            <para>This is redundant when <see cref="F:OnCollisionActivateEx.ReorderableListFlags.HideRemoveButtons"/>
             is specified.</para>
             </remarks>
             <param name="index">Zero-based index for list element.</param>
@@ -422,18 +422,18 @@
             A value of <c>true</c> if item can be removed; otherwise <c>false</c>.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.IReorderableListAdaptor.Add">
+        <member name="M:OnCollisionActivateEx.IReorderableListAdaptor.Add">
             <summary>
             Add new element at end of list.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.IReorderableListAdaptor.Insert(System.Int32)">
+        <member name="M:OnCollisionActivateEx.IReorderableListAdaptor.Insert(System.Int32)">
             <summary>
             Insert new element at specified index.
             </summary>
             <param name="index">Zero-based index for list element.</param>
         </member>
-        <member name="M:OnCollisionActivate.IReorderableListAdaptor.Duplicate(System.Int32)">
+        <member name="M:OnCollisionActivateEx.IReorderableListAdaptor.Duplicate(System.Int32)">
             <summary>
             Duplicate existing element.
             </summary>
@@ -443,38 +443,38 @@
             </remarks>
             <param name="index">Zero-based index of list element.</param>
         </member>
-        <member name="M:OnCollisionActivate.IReorderableListAdaptor.Remove(System.Int32)">
+        <member name="M:OnCollisionActivateEx.IReorderableListAdaptor.Remove(System.Int32)">
             <summary>
             Remove element at specified index.
             </summary>
             <param name="index">Zero-based index of list element.</param>
         </member>
-        <member name="M:OnCollisionActivate.IReorderableListAdaptor.Move(System.Int32,System.Int32)">
+        <member name="M:OnCollisionActivateEx.IReorderableListAdaptor.Move(System.Int32,System.Int32)">
             <summary>
             Move element from source index to destination index.
             </summary>
             <param name="sourceIndex">Zero-based index of source element.</param>
             <param name="destIndex">Zero-based index of destination element.</param>
         </member>
-        <member name="M:OnCollisionActivate.IReorderableListAdaptor.Clear">
+        <member name="M:OnCollisionActivateEx.IReorderableListAdaptor.Clear">
             <summary>
             Clear all elements from list.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.IReorderableListAdaptor.DrawItemBackground(UnityEngine.Rect,System.Int32)">
+        <member name="M:OnCollisionActivateEx.IReorderableListAdaptor.DrawItemBackground(UnityEngine.Rect,System.Int32)">
             <summary>
             Draws background of a list item.
             </summary>
             <remarks>
             <para>This method is only used to handle GUI repaint events.</para>
             <para>Background of list item spans a slightly larger area than the main
-            interface that is drawn by <see cref="M:OnCollisionActivate.IReorderableListAdaptor.DrawItem(UnityEngine.Rect,System.Int32)"/> since it is
+            interface that is drawn by <see cref="M:OnCollisionActivateEx.IReorderableListAdaptor.DrawItem(UnityEngine.Rect,System.Int32)"/> since it is
             drawn behind the grab handle.</para>
             </remarks>
             <param name="position">Total position of list element in GUI.</param>
             <param name="index">Zero-based index of array element.</param>
         </member>
-        <member name="M:OnCollisionActivate.IReorderableListAdaptor.DrawItem(UnityEngine.Rect,System.Int32)">
+        <member name="M:OnCollisionActivateEx.IReorderableListAdaptor.DrawItem(UnityEngine.Rect,System.Int32)">
             <summary>
             Draws main interface for a list item.
             </summary>
@@ -484,7 +484,7 @@
             <param name="position">Position in GUI.</param>
             <param name="index">Zero-based index of array element.</param>
         </member>
-        <member name="M:OnCollisionActivate.IReorderableListAdaptor.GetItemHeight(System.Int32)">
+        <member name="M:OnCollisionActivateEx.IReorderableListAdaptor.GetItemHeight(System.Int32)">
             <summary>
             Gets height of list item in pixels.
             </summary>
@@ -493,63 +493,63 @@
             Measurement in pixels.
             </returns>
         </member>
-        <member name="P:OnCollisionActivate.IReorderableListAdaptor.Count">
+        <member name="P:OnCollisionActivateEx.IReorderableListAdaptor.Count">
             <summary>
             Gets count of elements in list.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.GenericListAdaptor`1.FixedItemHeight">
+        <member name="F:OnCollisionActivateEx.GenericListAdaptor`1.FixedItemHeight">
             <summary>
             Fixed height of each list item.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.#ctor(System.Collections.Generic.IList{`0},OnCollisionActivate.ReorderableListControl.ItemDrawer{`0},System.Single)">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.#ctor(System.Collections.Generic.IList{`0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{`0},System.Single)">
             <summary>
-            Initializes a new instance of <see cref="T:OnCollisionActivate.GenericListAdaptor`1"/>.
+            Initializes a new instance of <see cref="T:OnCollisionActivateEx.GenericListAdaptor`1"/>.
             </summary>
             <param name="list">The list which can be reordered.</param>
             <param name="itemDrawer">Callback to draw list item.</param>
             <param name="itemHeight">Height of list item in pixels.</param>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.CanDrag(System.Int32)">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.CanDrag(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.CanRemove(System.Int32)">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.CanRemove(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.Add">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.Add">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.Insert(System.Int32)">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.Insert(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.Duplicate(System.Int32)">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.Duplicate(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.Remove(System.Int32)">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.Remove(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.Move(System.Int32,System.Int32)">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.Move(System.Int32,System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.Clear">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.Clear">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.DrawItemBackground(UnityEngine.Rect,System.Int32)">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.DrawItemBackground(UnityEngine.Rect,System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.DrawItem(UnityEngine.Rect,System.Int32)">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.DrawItem(UnityEngine.Rect,System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.GenericListAdaptor`1.GetItemHeight(System.Int32)">
+        <member name="M:OnCollisionActivateEx.GenericListAdaptor`1.GetItemHeight(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="P:OnCollisionActivate.GenericListAdaptor`1.List">
+        <member name="P:OnCollisionActivateEx.GenericListAdaptor`1.List">
             <summary>
             Gets the underlying list data structure.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.GenericListAdaptor`1.Item(System.Int32)">
+        <member name="P:OnCollisionActivateEx.GenericListAdaptor`1.Item(System.Int32)">
             <summary>
             Gets element from list.
             </summary>
@@ -558,16 +558,16 @@
             The element.
             </returns>
         </member>
-        <member name="P:OnCollisionActivate.GenericListAdaptor`1.Count">
+        <member name="P:OnCollisionActivateEx.GenericListAdaptor`1.Count">
             <inheritdoc/>
         </member>
-        <member name="T:OnCollisionActivate.Internal.GUIHelper">
+        <member name="T:OnCollisionActivateEx.Internal.GUIHelper">
             <summary>
             Utility functions to assist with GUIs.
             </summary>
             <exclude/>
         </member>
-        <member name="F:OnCollisionActivate.Internal.GUIHelper.VisibleRect">
+        <member name="F:OnCollisionActivateEx.Internal.GUIHelper.VisibleRect">
             <summary>
             Gets visible rectangle within GUI.
             </summary>
@@ -575,12 +575,12 @@
             <para>VisibleRect = TopmostRect + scrollViewOffsets</para>
             </remarks>
         </member>
-        <member name="F:OnCollisionActivate.Internal.GUIHelper.FocusTextInControl">
+        <member name="F:OnCollisionActivateEx.Internal.GUIHelper.FocusTextInControl">
             <summary>
             Focus control and text editor where applicable.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.Internal.GUIHelper.DrawTexture(UnityEngine.Rect,UnityEngine.Texture2D)">
+        <member name="M:OnCollisionActivateEx.Internal.GUIHelper.DrawTexture(UnityEngine.Rect,UnityEngine.Texture2D)">
             <summary>
             Draw texture using <see cref="T:UnityEngine.GUIStyle"/> to workaround bug in Unity where
             <see cref="M:UnityEngine.GUI.DrawTexture(UnityEngine.Rect,UnityEngine.Texture,UnityEngine.ScaleMode,System.Boolean)"/> flickers when embedded inside a property drawer.
@@ -588,16 +588,16 @@
             <param name="position">Position of which to draw texture in space of GUI.</param>
             <param name="texture">Texture.</param>
         </member>
-        <member name="T:OnCollisionActivate.Internal.ReorderableListTexture">
+        <member name="T:OnCollisionActivateEx.Internal.ReorderableListTexture">
             <exclude/>
         </member>
-        <member name="T:OnCollisionActivate.Internal.ReorderableListResources">
+        <member name="T:OnCollisionActivateEx.Internal.ReorderableListResources">
             <summary>
             Resources to assist with reorderable list control.
             </summary>
             <exclude/>
         </member>
-        <member name="F:OnCollisionActivate.Internal.ReorderableListResources.s_LightSkin">
+        <member name="F:OnCollisionActivateEx.Internal.ReorderableListResources.s_LightSkin">
             <summary>
             Resource assets for light skin.
             </summary>
@@ -606,7 +606,7 @@
             string so that actual asset files are not necessary.</para>
             </remarks>
         </member>
-        <member name="F:OnCollisionActivate.Internal.ReorderableListResources.s_DarkSkin">
+        <member name="F:OnCollisionActivateEx.Internal.ReorderableListResources.s_DarkSkin">
             <summary>
             Resource assets for dark skin.
             </summary>
@@ -615,19 +615,19 @@
             string so that actual asset files are not necessary.</para>
             </remarks>
         </member>
-        <member name="M:OnCollisionActivate.Internal.ReorderableListResources.GetTexture(OnCollisionActivate.Internal.ReorderableListTexture)">
+        <member name="M:OnCollisionActivateEx.Internal.ReorderableListResources.GetTexture(OnCollisionActivateEx.Internal.ReorderableListTexture)">
             <summary>
             Gets light or dark version of the specified texture.
             </summary>
             <param name="name"></param>
             <returns></returns>
         </member>
-        <member name="M:OnCollisionActivate.Internal.ReorderableListResources.GenerateSpecialTextures">
+        <member name="M:OnCollisionActivateEx.Internal.ReorderableListResources.GenerateSpecialTextures">
             <summary>
             Generate special textures.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.Internal.ReorderableListResources.CreatePixelTexture(System.String,UnityEngine.Color)">
+        <member name="M:OnCollisionActivateEx.Internal.ReorderableListResources.CreatePixelTexture(System.String,UnityEngine.Color)">
             <summary>
             Create 1x1 pixel texture of specified color.
             </summary>
@@ -637,13 +637,13 @@
             The new <c>Texture2D</c> instance.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.Internal.ReorderableListResources.LoadResourceAssets">
+        <member name="M:OnCollisionActivateEx.Internal.ReorderableListResources.LoadResourceAssets">
             <summary>
             Read textures from base-64 encoded strings. Automatically selects assets based
             upon whether the light or dark (pro) skin is active.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.Internal.ReorderableListResources.GetImageSize(System.Byte[],System.Int32@,System.Int32@)">
+        <member name="M:OnCollisionActivateEx.Internal.ReorderableListResources.GetImageSize(System.Byte[],System.Int32@,System.Int32@)">
             <summary>
             Read width and height if PNG file in pixels.
             </summary>
@@ -651,133 +651,133 @@
             <param name="width">Width of image in pixels.</param>
             <param name="height">Height of image in pixels.</param>
         </member>
-        <member name="T:OnCollisionActivate.ReorderableListStyles">
+        <member name="T:OnCollisionActivateEx.ReorderableListStyles">
             <summary>
-            Styles for the <see cref="T:OnCollisionActivate.ReorderableListControl"/>.
+            Styles for the <see cref="T:OnCollisionActivateEx.ReorderableListControl"/>.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListStyles.Title">
+        <member name="P:OnCollisionActivateEx.ReorderableListStyles.Title">
             <summary>
             Gets style for title header.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListStyles.Container">
+        <member name="P:OnCollisionActivateEx.ReorderableListStyles.Container">
             <summary>
             Gets style for the background of list control.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListStyles.Container2">
+        <member name="P:OnCollisionActivateEx.ReorderableListStyles.Container2">
             <summary>
             Gets an alternative style for the background of list control.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListStyles.FooterButton">
+        <member name="P:OnCollisionActivateEx.ReorderableListStyles.FooterButton">
             <summary>
             Gets style for footer button.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListStyles.FooterButton2">
+        <member name="P:OnCollisionActivateEx.ReorderableListStyles.FooterButton2">
             <summary>
             Gets an alternative style for footer button.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListStyles.ItemButton">
+        <member name="P:OnCollisionActivateEx.ReorderableListStyles.ItemButton">
             <summary>
             Gets style for remove item button.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListStyles.SelectedItem">
+        <member name="P:OnCollisionActivateEx.ReorderableListStyles.SelectedItem">
             <summary>
             Gets style for the background of a selected item.
             </summary>
         </member>
-        <member name="T:OnCollisionActivate.AddMenuClickedEventArgs">
+        <member name="T:OnCollisionActivateEx.AddMenuClickedEventArgs">
             <summary>
-            Arguments which are passed to <see cref="T:OnCollisionActivate.AddMenuClickedEventHandler"/>.
+            Arguments which are passed to <see cref="T:OnCollisionActivateEx.AddMenuClickedEventHandler"/>.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.AddMenuClickedEventArgs.#ctor(OnCollisionActivate.IReorderableListAdaptor,UnityEngine.Rect)">
+        <member name="M:OnCollisionActivateEx.AddMenuClickedEventArgs.#ctor(OnCollisionActivateEx.IReorderableListAdaptor,UnityEngine.Rect)">
             <summary>
-            Initializes a new instance of <see cref="T:OnCollisionActivate.ItemMovedEventArgs"/>.
+            Initializes a new instance of <see cref="T:OnCollisionActivateEx.ItemMovedEventArgs"/>.
             </summary>
             <param name="adaptor">Reorderable list adaptor.</param>
             <param name="buttonPosition">Position of the add menu button.</param>
         </member>
-        <member name="P:OnCollisionActivate.AddMenuClickedEventArgs.Adaptor">
+        <member name="P:OnCollisionActivateEx.AddMenuClickedEventArgs.Adaptor">
             <summary>
             Gets adaptor to reorderable list container.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.AddMenuClickedEventArgs.ButtonPosition">
+        <member name="P:OnCollisionActivateEx.AddMenuClickedEventArgs.ButtonPosition">
             <summary>
             Gets position of the add menu button.
             </summary>
         </member>
-        <member name="T:OnCollisionActivate.AddMenuClickedEventHandler">
+        <member name="T:OnCollisionActivateEx.AddMenuClickedEventHandler">
             <summary>
             An event handler which is invoked when the "Add Menu" button is clicked.
             </summary>
             <param name="sender">Object which raised event.</param>
             <param name="args">Event arguments.</param>
         </member>
-        <member name="T:OnCollisionActivate.ItemInsertedEventArgs">
+        <member name="T:OnCollisionActivateEx.ItemInsertedEventArgs">
             <summary>
-            Arguments which are passed to <see cref="T:OnCollisionActivate.ItemInsertedEventHandler"/>.
+            Arguments which are passed to <see cref="T:OnCollisionActivateEx.ItemInsertedEventHandler"/>.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ItemInsertedEventArgs.#ctor(OnCollisionActivate.IReorderableListAdaptor,System.Int32,System.Boolean)">
+        <member name="M:OnCollisionActivateEx.ItemInsertedEventArgs.#ctor(OnCollisionActivateEx.IReorderableListAdaptor,System.Int32,System.Boolean)">
             <summary>
-            Initializes a new instance of <see cref="T:OnCollisionActivate.ItemInsertedEventArgs"/>.
+            Initializes a new instance of <see cref="T:OnCollisionActivateEx.ItemInsertedEventArgs"/>.
             </summary>
             <param name="adaptor">Reorderable list adaptor.</param>
             <param name="itemIndex">Zero-based index of item.</param>
             <param name="wasDuplicated">Indicates if inserted item was duplicated from another item.</param>
         </member>
-        <member name="P:OnCollisionActivate.ItemInsertedEventArgs.Adaptor">
+        <member name="P:OnCollisionActivateEx.ItemInsertedEventArgs.Adaptor">
             <summary>
             Gets adaptor to reorderable list container which contains element.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ItemInsertedEventArgs.ItemIndex">
+        <member name="P:OnCollisionActivateEx.ItemInsertedEventArgs.ItemIndex">
             <summary>
             Gets zero-based index of item which was inserted.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ItemInsertedEventArgs.WasDuplicated">
+        <member name="P:OnCollisionActivateEx.ItemInsertedEventArgs.WasDuplicated">
             <summary>
             Indicates if inserted item was duplicated from another item.
             </summary>
         </member>
-        <member name="T:OnCollisionActivate.ItemInsertedEventHandler">
+        <member name="T:OnCollisionActivateEx.ItemInsertedEventHandler">
             <summary>
             An event handler which is invoked after new list item is inserted.
             </summary>
             <param name="sender">Object which raised event.</param>
             <param name="args">Event arguments.</param>
         </member>
-        <member name="T:OnCollisionActivate.ItemRemovingEventArgs">
+        <member name="T:OnCollisionActivateEx.ItemRemovingEventArgs">
             <summary>
-            Arguments which are passed to <see cref="T:OnCollisionActivate.ItemRemovingEventHandler"/>.
+            Arguments which are passed to <see cref="T:OnCollisionActivateEx.ItemRemovingEventHandler"/>.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ItemRemovingEventArgs.#ctor(OnCollisionActivate.IReorderableListAdaptor,System.Int32)">
+        <member name="M:OnCollisionActivateEx.ItemRemovingEventArgs.#ctor(OnCollisionActivateEx.IReorderableListAdaptor,System.Int32)">
             <summary>
-            Initializes a new instance of <see cref="T:OnCollisionActivate.ItemRemovingEventArgs"/>.
+            Initializes a new instance of <see cref="T:OnCollisionActivateEx.ItemRemovingEventArgs"/>.
             </summary>
             <param name="adaptor">Reorderable list adaptor.</param>
             <param name="itemIndex">Zero-based index of item.</param>
         </member>
-        <member name="P:OnCollisionActivate.ItemRemovingEventArgs.Adaptor">
+        <member name="P:OnCollisionActivateEx.ItemRemovingEventArgs.Adaptor">
             <summary>
             Gets adaptor to reorderable list container which contains element.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ItemRemovingEventArgs.ItemIndex">
+        <member name="P:OnCollisionActivateEx.ItemRemovingEventArgs.ItemIndex">
             <summary>
             Gets zero-based index of item which is being removed.
             </summary>
         </member>
-        <member name="T:OnCollisionActivate.ItemRemovingEventHandler">
+        <member name="T:OnCollisionActivateEx.ItemRemovingEventHandler">
             <summary>
             An event handler which is invoked before a list item is removed.
             </summary>
@@ -788,42 +788,42 @@
             <param name="sender">Object which raised event.</param>
             <param name="args">Event arguments.</param>
         </member>
-        <member name="T:OnCollisionActivate.ItemMovingEventArgs">
+        <member name="T:OnCollisionActivateEx.ItemMovingEventArgs">
             <summary>
-            Arguments which are passed to <see cref="T:OnCollisionActivate.ItemMovingEventHandler"/>.
+            Arguments which are passed to <see cref="T:OnCollisionActivateEx.ItemMovingEventHandler"/>.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ItemMovingEventArgs.#ctor(OnCollisionActivate.IReorderableListAdaptor,System.Int32,System.Int32)">
+        <member name="M:OnCollisionActivateEx.ItemMovingEventArgs.#ctor(OnCollisionActivateEx.IReorderableListAdaptor,System.Int32,System.Int32)">
             <summary>
-            Initializes a new instance of <see cref="T:OnCollisionActivate.ItemMovingEventArgs"/>.
+            Initializes a new instance of <see cref="T:OnCollisionActivateEx.ItemMovingEventArgs"/>.
             </summary>
             <param name="adaptor">Reorderable list adaptor.</param>
             <param name="itemIndex">Zero-based index of item.</param>
             <param name="destinationItemIndex">Xero-based index of item destination.</param>
         </member>
-        <member name="P:OnCollisionActivate.ItemMovingEventArgs.Adaptor">
+        <member name="P:OnCollisionActivateEx.ItemMovingEventArgs.Adaptor">
             <summary>
             Gets adaptor to reorderable list container which contains element.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ItemMovingEventArgs.ItemIndex">
+        <member name="P:OnCollisionActivateEx.ItemMovingEventArgs.ItemIndex">
             <summary>
             Gets current zero-based index of item which is going to be moved.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ItemMovingEventArgs.DestinationItemIndex">
+        <member name="P:OnCollisionActivateEx.ItemMovingEventArgs.DestinationItemIndex">
             <summary>
             Gets the new candidate zero-based index for the item.
             </summary>
-            <seealso cref="P:OnCollisionActivate.ItemMovingEventArgs.NewItemIndex"/>
+            <seealso cref="P:OnCollisionActivateEx.ItemMovingEventArgs.NewItemIndex"/>
         </member>
-        <member name="P:OnCollisionActivate.ItemMovingEventArgs.NewItemIndex">
+        <member name="P:OnCollisionActivateEx.ItemMovingEventArgs.NewItemIndex">
             <summary>
             Gets zero-based index of item <strong>after</strong> it has been moved.
             </summary>
-            <seealso cref="P:OnCollisionActivate.ItemMovingEventArgs.DestinationItemIndex"/>
+            <seealso cref="P:OnCollisionActivateEx.ItemMovingEventArgs.DestinationItemIndex"/>
         </member>
-        <member name="T:OnCollisionActivate.ItemMovingEventHandler">
+        <member name="T:OnCollisionActivateEx.ItemMovingEventHandler">
             <summary>
             An event handler which is invoked before a list item is moved.
             </summary>
@@ -834,62 +834,62 @@
             <param name="sender">Object which raised event.</param>
             <param name="args">Event arguments.</param>
         </member>
-        <member name="T:OnCollisionActivate.ItemMovedEventArgs">
+        <member name="T:OnCollisionActivateEx.ItemMovedEventArgs">
             <summary>
-            Arguments which are passed to <see cref="T:OnCollisionActivate.ItemMovedEventHandler"/>.
+            Arguments which are passed to <see cref="T:OnCollisionActivateEx.ItemMovedEventHandler"/>.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ItemMovedEventArgs.#ctor(OnCollisionActivate.IReorderableListAdaptor,System.Int32,System.Int32)">
+        <member name="M:OnCollisionActivateEx.ItemMovedEventArgs.#ctor(OnCollisionActivateEx.IReorderableListAdaptor,System.Int32,System.Int32)">
             <summary>
-            Initializes a new instance of <see cref="T:OnCollisionActivate.ItemMovedEventArgs"/>.
+            Initializes a new instance of <see cref="T:OnCollisionActivateEx.ItemMovedEventArgs"/>.
             </summary>
             <param name="adaptor">Reorderable list adaptor.</param>
             <param name="oldItemIndex">Old zero-based index of item.</param>
             <param name="newItemIndex">New zero-based index of item.</param>
         </member>
-        <member name="P:OnCollisionActivate.ItemMovedEventArgs.Adaptor">
+        <member name="P:OnCollisionActivateEx.ItemMovedEventArgs.Adaptor">
             <summary>
             Gets adaptor to reorderable list container which contains element.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ItemMovedEventArgs.OldItemIndex">
+        <member name="P:OnCollisionActivateEx.ItemMovedEventArgs.OldItemIndex">
             <summary>
             Gets old zero-based index of the item which was moved.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ItemMovedEventArgs.NewItemIndex">
+        <member name="P:OnCollisionActivateEx.ItemMovedEventArgs.NewItemIndex">
             <summary>
             Gets new zero-based index of the item which was moved.
             </summary>
         </member>
-        <member name="T:OnCollisionActivate.ItemMovedEventHandler">
+        <member name="T:OnCollisionActivateEx.ItemMovedEventHandler">
             <summary>
             An event handler which is invoked after a list item is moved.
             </summary>
             <param name="sender">Object which raised event.</param>
             <param name="args">Event arguments.</param>
         </member>
-        <member name="T:OnCollisionActivate.ReorderableListControl">
+        <member name="T:OnCollisionActivateEx.ReorderableListControl">
             <summary>
             Base class for custom reorderable list control.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.AnchorBackgroundColor">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.AnchorBackgroundColor">
             <summary>
             Background color of anchor list item.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.TargetBackgroundColor">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.TargetBackgroundColor">
             <summary>
             Background color of target slot when dragging list item.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.s_RightAlignedLabelStyle">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.s_RightAlignedLabelStyle">
             <summary>
             Style for right-aligned label for element number prefix.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.DrawControlFromState(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.DrawControlFromState(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
             Generate and draw control from state object.
             </summary>
@@ -897,7 +897,7 @@
             <param name="drawEmpty">Delegate for drawing empty list.</param>
             <param name="flags">Optional flags to pass into list field.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.DrawControlFromState(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.DrawControlFromState(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
             Generate and draw control from state object.
             </summary>
@@ -906,111 +906,111 @@
             <param name="drawEmpty">Delegate for drawing empty list.</param>
             <param name="flags">Optional flags to pass into list field.</param>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.s_AnchorMouseOffset">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.s_AnchorMouseOffset">
             <summary>
             Position of mouse upon anchoring item for drag.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.s_AnchorIndex">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.s_AnchorIndex">
             <summary>
             Zero-based index of anchored list item.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.s_TargetIndex">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.s_TargetIndex">
             <summary>
             Zero-based index of target list item for reordering.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.s_AutoFocusControlID">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.s_AutoFocusControlID">
             <summary>
             Unique ID of list control which should be automatically focused. A value
             of zero indicates that no control is to be focused.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.s_AutoFocusIndex">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.s_AutoFocusIndex">
             <summary>
             Zero-based index of item which should be focused.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.s_CurrentItemIndex">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.s_CurrentItemIndex">
             <summary>
             Zero-based index of list item which is currently being drawn.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.OnAddMenuClicked(OnCollisionActivate.AddMenuClickedEventArgs)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.OnAddMenuClicked(OnCollisionActivateEx.AddMenuClickedEventArgs)">
             <summary>
             Raises event when add menu button is clicked.
             </summary>
             <param name="args">Event arguments.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.OnItemInserted(OnCollisionActivate.ItemInsertedEventArgs)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.OnItemInserted(OnCollisionActivateEx.ItemInsertedEventArgs)">
             <summary>
             Raises event after list item is inserted or duplicated.
             </summary>
             <param name="args">Event arguments.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.OnItemRemoving(OnCollisionActivate.ItemRemovingEventArgs)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.OnItemRemoving(OnCollisionActivateEx.ItemRemovingEventArgs)">
             <summary>
             Raises event before list item is removed and provides oppertunity to cancel.
             </summary>
             <param name="args">Event arguments.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.OnItemMoving(OnCollisionActivate.ItemMovingEventArgs)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.OnItemMoving(OnCollisionActivateEx.ItemMovingEventArgs)">
             <summary>
             Raises event immediately before list item is moved and provides oppertunity to cancel.
             </summary>
             <param name="args">Event arguments.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.OnItemMoved(OnCollisionActivate.ItemMovedEventArgs)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.OnItemMoved(OnCollisionActivateEx.ItemMovedEventArgs)">
             <summary>
             Raises event after list item has been moved.
             </summary>
             <param name="args">Event arguments.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.#ctor">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.#ctor">
             <summary>
-            Initializes a new instance of <see cref="T:OnCollisionActivate.ReorderableListControl"/>.
+            Initializes a new instance of <see cref="T:OnCollisionActivateEx.ReorderableListControl"/>.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.#ctor(OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.#ctor(OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
-            Initializes a new instance of <see cref="T:OnCollisionActivate.ReorderableListControl"/>.
+            Initializes a new instance of <see cref="T:OnCollisionActivateEx.ReorderableListControl"/>.
             </summary>
             <param name="flags">Optional flags which affect behavior of control.</param>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl._controlID">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl._controlID">
             <summary>
             Unique Id of control.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl._visibleRect">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl._visibleRect">
             <summary>
             Visible rectangle of control.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl._indexLabelWidth">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl._indexLabelWidth">
             <summary>
             Width of index label in pixels (zero indicates no label).
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl._tracking">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl._tracking">
             <summary>
             Indicates whether item is currently being dragged within control.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl._allowReordering">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl._allowReordering">
             <summary>
             Indicates if reordering is allowed.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.PrepareState(System.Int32,OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.PrepareState(System.Int32,OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
             Prepare initial state for list control.
             </summary>
             <param name="controlID">Unique ID of list control.</param>
             <param name="adaptor">Reorderable list adaptor.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.AutoFocusItem(System.Int32,System.Int32)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.AutoFocusItem(System.Int32,System.Int32)">
             <summary>
             Indicate that first control of list item should be automatically focused
             if possible.
@@ -1018,7 +1018,7 @@
             <param name="controlID">Unique ID of list control.</param>
             <param name="itemIndex">Zero-based index of list item.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.DoRemoveButton(UnityEngine.Rect,System.Boolean)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.DoRemoveButton(UnityEngine.Rect,System.Boolean)">
             <summary>
             Draw remove button.
             </summary>
@@ -1028,19 +1028,19 @@
             A value of <c>true</c> if clicked; otherwise <c>false</c>.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.BeginTrackingReorderDrag(System.Int32,System.Int32)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.BeginTrackingReorderDrag(System.Int32,System.Int32)">
             <summary>
             Begin tracking drag and drop within list.
             </summary>
             <param name="controlID">Unique ID of list control.</param>
             <param name="itemIndex">Zero-based index of item which is going to be dragged.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.StopTrackingReorderDrag">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.StopTrackingReorderDrag">
             <summary>
             Stop tracking drag and drop.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.IsTrackingControl(System.Int32)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.IsTrackingControl(System.Int32)">
             <summary>
             Gets a value indicating whether item in current list is currently being tracked.
             </summary>
@@ -1049,37 +1049,37 @@
             A value of <c>true</c> if item is being tracked; otherwise <c>false</c>.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.AcceptReorderDrag(OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.AcceptReorderDrag(OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
             Accept reordering.
             </summary>
             <param name="adaptor">Reorderable list adaptor.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.DrawListContainerAndItems(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.DrawListContainerAndItems(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
             Draw list container and items.
             </summary>
             <param name="position">Position of list control in GUI.</param>
             <param name="adaptor">Reorderable list adaptor.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.CheckForAutoFocusControl">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.CheckForAutoFocusControl">
             <summary>
             Checks to see if list control needs to be automatically focused.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.DrawFooterControls(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.DrawFooterControls(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
             Draw additional controls below list control and highlight drop target.
             </summary>
             <param name="position">Position of list control in GUI.</param>
             <param name="adaptor">Reorderable list adaptor.</param>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.s_ContainerHeightCache">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.s_ContainerHeightCache">
             <summary>
             Cache of container heights mapped by control ID.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.DrawLayoutListField(OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.DrawLayoutListField(OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
             Do layout version of list field.
             </summary>
@@ -1088,7 +1088,7 @@
             Position of list container area in GUI (excludes footer area).
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.DrawLayoutEmptyList(OnCollisionActivate.ReorderableListControl.DrawEmpty)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.DrawLayoutEmptyList(OnCollisionActivateEx.ReorderableListControl.DrawEmpty)">
             <summary>
             Draw content for empty list (layout version).
             </summary>
@@ -1097,19 +1097,19 @@
             Position of list container area in GUI (excludes footer area).
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.DrawEmptyListControl(UnityEngine.Rect,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.DrawEmptyListControl(UnityEngine.Rect,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute)">
             <summary>
             Draw content for empty list (layout version).
             </summary>
             <param name="position">Position of list control in GUI.</param>
             <param name="drawEmpty">Callback to draw empty content.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.FixStyles">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.FixStyles">
             <summary>
             Correct if for some reason one or more styles are missing!
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.Draw(System.Int32,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.Draw(System.Int32,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty)">
             <summary>
             Draw layout version of list control.
             </summary>
@@ -1117,13 +1117,13 @@
             <param name="adaptor">Reorderable list adaptor.</param>
             <param name="drawEmpty">Delegate for drawing empty list.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.Draw(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListControl.Draw(System.Int32,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.Draw(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListControl.Draw(System.Int32,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.Draw(OnCollisionActivate.IReorderableListAdaptor)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListControl.Draw(System.Int32,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.Draw(OnCollisionActivateEx.IReorderableListAdaptor)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListControl.Draw(System.Int32,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.Draw(UnityEngine.Rect,System.Int32,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.Draw(UnityEngine.Rect,System.Int32,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute)">
             <summary>
             Draw list control with absolute positioning.
             </summary>
@@ -1132,7 +1132,7 @@
             <param name="adaptor">Reorderable list adaptor.</param>
             <param name="drawEmpty">Delegate for drawing empty list.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.Draw(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.Draw(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute)">
             <summary>
             Draw list control with absolute positioning.
             </summary>
@@ -1140,45 +1140,45 @@
             <param name="adaptor">Reorderable list adaptor.</param>
             <param name="drawEmpty">Delegate for drawing empty list.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.Draw(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListControl.Draw(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.Draw(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListControl.Draw(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute)"/>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.CommandMoveToTop">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.CommandMoveToTop">
             <summary>
             Content for "Move to Top" command.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.CommandMoveToBottom">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.CommandMoveToBottom">
             <summary>
             Content for "Move to Bottom" command.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.CommandInsertAbove">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.CommandInsertAbove">
             <summary>
             Content for "Insert Above" command.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.CommandInsertBelow">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.CommandInsertBelow">
             <summary>
             Content for "Insert Below" command.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.CommandDuplicate">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.CommandDuplicate">
             <summary>
             Content for "Duplicate" command.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.CommandRemove">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.CommandRemove">
             <summary>
             Content for "Remove" command.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.CommandClearAll">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.CommandClearAll">
             <summary>
             Content for "Clear All" command.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListControl.DefaultContextHandler">
+        <member name="F:OnCollisionActivateEx.ReorderableListControl.DefaultContextHandler">
             <summary>
             Default functionality to handle context command.
             </summary>
@@ -1197,9 +1197,9 @@
             }
             ]]></code>
             </example>
-            <seealso cref="M:OnCollisionActivate.ReorderableListControl.AddItemsToMenu(UnityEditor.GenericMenu,System.Int32,OnCollisionActivate.IReorderableListAdaptor)"/>
+            <seealso cref="M:OnCollisionActivateEx.ReorderableListControl.AddItemsToMenu(UnityEditor.GenericMenu,System.Int32,OnCollisionActivateEx.IReorderableListAdaptor)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.AddItemsToMenu(UnityEditor.GenericMenu,System.Int32,OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.AddItemsToMenu(UnityEditor.GenericMenu,System.Int32,OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
             Invoked to generate context menu for list item.
             </summary>
@@ -1207,7 +1207,7 @@
             <param name="itemIndex">Zero-based index of item which was right-clicked.</param>
             <param name="adaptor">Reorderable list adaptor.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.HandleCommand(System.String,System.Int32,OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.HandleCommand(System.String,System.Int32,OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
             Invoked to handle context command.
             </summary>
@@ -1251,7 +1251,7 @@
             A value of <c>true</c> if command was known; otherwise <c>false</c>.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.DoCommand(System.String,System.Int32,OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.DoCommand(System.String,System.Int32,OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
             Call to manually perform command.
             </summary>
@@ -1265,7 +1265,7 @@
             A value of <c>true</c> if command was known; otherwise <c>false</c>.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.DoCommand(UnityEngine.GUIContent,System.Int32,OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.DoCommand(UnityEngine.GUIContent,System.Int32,OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
             Call to manually perform command.
             </summary>
@@ -1279,7 +1279,7 @@
             A value of <c>true</c> if command was known; otherwise <c>false</c>.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.CalculateListHeight(OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.CalculateListHeight(OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
             Calculate height of list control in pixels.
             </summary>
@@ -1288,7 +1288,7 @@
             Required list height in pixels.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.CalculateListHeight(System.Int32,System.Single)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.CalculateListHeight(System.Int32,System.Single)">
             <summary>
             Calculate height of list control in pixels.
             </summary>
@@ -1298,7 +1298,7 @@
             Required list height in pixels.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.MoveItem(OnCollisionActivate.IReorderableListAdaptor,System.Int32,System.Int32)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.MoveItem(OnCollisionActivateEx.IReorderableListAdaptor,System.Int32,System.Int32)">
             <summary>
             Move item from source index to destination index.
             </summary>
@@ -1306,32 +1306,32 @@
             <param name="sourceIndex">Zero-based index of source item.</param>
             <param name="destIndex">Zero-based index of destination index.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.AddItem(OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.AddItem(OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
-            Add item at end of list and raises the event <see cref="E:OnCollisionActivate.ReorderableListControl.ItemInserted"/>.
+            Add item at end of list and raises the event <see cref="E:OnCollisionActivateEx.ReorderableListControl.ItemInserted"/>.
             </summary>
             <param name="adaptor">Reorderable list adaptor.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.InsertItem(OnCollisionActivate.IReorderableListAdaptor,System.Int32)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.InsertItem(OnCollisionActivateEx.IReorderableListAdaptor,System.Int32)">
             <summary>
-            Insert item at specified index and raises the event <see cref="E:OnCollisionActivate.ReorderableListControl.ItemInserted"/>.
-            </summary>
-            <param name="adaptor">Reorderable list adaptor.</param>
-            <param name="itemIndex">Zero-based index of item.</param>
-        </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.DuplicateItem(OnCollisionActivate.IReorderableListAdaptor,System.Int32)">
-            <summary>
-            Duplicate specified item and raises the event <see cref="E:OnCollisionActivate.ReorderableListControl.ItemInserted"/>.
+            Insert item at specified index and raises the event <see cref="E:OnCollisionActivateEx.ReorderableListControl.ItemInserted"/>.
             </summary>
             <param name="adaptor">Reorderable list adaptor.</param>
             <param name="itemIndex">Zero-based index of item.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.RemoveItem(OnCollisionActivate.IReorderableListAdaptor,System.Int32)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.DuplicateItem(OnCollisionActivateEx.IReorderableListAdaptor,System.Int32)">
+            <summary>
+            Duplicate specified item and raises the event <see cref="E:OnCollisionActivateEx.ReorderableListControl.ItemInserted"/>.
+            </summary>
+            <param name="adaptor">Reorderable list adaptor.</param>
+            <param name="itemIndex">Zero-based index of item.</param>
+        </member>
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.RemoveItem(OnCollisionActivateEx.IReorderableListAdaptor,System.Int32)">
             <summary>
             Remove specified item.
             </summary>
             <remarks>
-            <para>The event <see cref="E:OnCollisionActivate.ReorderableListControl.ItemRemoving"/> is raised prior to removing item
+            <para>The event <see cref="E:OnCollisionActivateEx.ReorderableListControl.ItemRemoving"/> is raised prior to removing item
             and allows removal to be cancelled.</para>
             </remarks>
             <param name="adaptor">Reorderable list adaptor.</param>
@@ -1340,12 +1340,12 @@
             Returns a value of <c>false</c> if operation was cancelled.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListControl.ClearAll(OnCollisionActivate.IReorderableListAdaptor)">
+        <member name="M:OnCollisionActivateEx.ReorderableListControl.ClearAll(OnCollisionActivateEx.IReorderableListAdaptor)">
             <summary>
             Remove all items from list.
             </summary>
             <remarks>
-            <para>The event <see cref="E:OnCollisionActivate.ReorderableListControl.ItemRemoving"/> is raised for each item prior to
+            <para>The event <see cref="E:OnCollisionActivateEx.ReorderableListControl.ItemRemoving"/> is raised for each item prior to
             clearing array and allows entire operation to be cancelled.</para>
             </remarks>
             <param name="adaptor">Reorderable list adaptor.</param>
@@ -1353,59 +1353,59 @@
             Returns a value of <c>false</c> if operation was cancelled.
             </returns>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListControl.CurrentItemIndex">
+        <member name="P:OnCollisionActivateEx.ReorderableListControl.CurrentItemIndex">
             <summary>
             Gets zero-based index of list item which is currently being drawn;
             or a value of -1 if no item is currently being drawn.
             </summary>
             <remarks>
-            <para>Use <see cref="P:OnCollisionActivate.ReorderableListGUI.CurrentItemIndex"/> instead.</para>
+            <para>Use <see cref="P:OnCollisionActivateEx.ReorderableListGUI.CurrentItemIndex"/> instead.</para>
             </remarks>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListControl.Flags">
+        <member name="P:OnCollisionActivateEx.ReorderableListControl.Flags">
             <summary>
             Gets or sets flags which affect behavior of control.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListControl.HasFooterButtons">
+        <member name="P:OnCollisionActivateEx.ReorderableListControl.HasFooterButtons">
             <summary>
             Gets a value indicating whether one or more footer buttons are shown.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListControl.HasAddButton">
+        <member name="P:OnCollisionActivateEx.ReorderableListControl.HasAddButton">
             <summary>
             Gets a value indicating whether add button is shown.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListControl.HasAddMenuButton">
+        <member name="P:OnCollisionActivateEx.ReorderableListControl.HasAddMenuButton">
             <summary>
             Gets a value indicating whether add menu button is shown.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListControl.HasRemoveButtons">
+        <member name="P:OnCollisionActivateEx.ReorderableListControl.HasRemoveButtons">
             <summary>
             Gets a value indicating whether remove buttons are shown.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListControl.ContainerStyle">
+        <member name="P:OnCollisionActivateEx.ReorderableListControl.ContainerStyle">
             <summary>
             Gets or sets style used to draw background of list control.
             </summary>
-            <seealso cref="P:OnCollisionActivate.ReorderableListStyles.Container"/>
+            <seealso cref="P:OnCollisionActivateEx.ReorderableListStyles.Container"/>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListControl.FooterButtonStyle">
+        <member name="P:OnCollisionActivateEx.ReorderableListControl.FooterButtonStyle">
             <summary>
             Gets or sets style used to draw footer buttons.
             </summary>
-            <seealso cref="P:OnCollisionActivate.ReorderableListStyles.FooterButton"/>
+            <seealso cref="P:OnCollisionActivateEx.ReorderableListStyles.FooterButton"/>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListControl.ItemButtonStyle">
+        <member name="P:OnCollisionActivateEx.ReorderableListControl.ItemButtonStyle">
             <summary>
             Gets or sets style used to draw list item buttons (like the remove button).
             </summary>
-            <seealso cref="P:OnCollisionActivate.ReorderableListStyles.ItemButton"/>
+            <seealso cref="P:OnCollisionActivateEx.ReorderableListStyles.ItemButton"/>
         </member>
-        <member name="E:OnCollisionActivate.ReorderableListControl.AddMenuClicked">
+        <member name="E:OnCollisionActivateEx.ReorderableListControl.AddMenuClicked">
             <summary>
             Occurs when add menu button is clicked.
             </summary>
@@ -1413,27 +1413,27 @@
             <para>Add menu button is only shown when there is at least one subscriber to this event.</para>
             </remarks>
         </member>
-        <member name="E:OnCollisionActivate.ReorderableListControl.ItemInserted">
+        <member name="E:OnCollisionActivateEx.ReorderableListControl.ItemInserted">
             <summary>
             Occurs after list item is inserted or duplicated.
             </summary>
         </member>
-        <member name="E:OnCollisionActivate.ReorderableListControl.ItemRemoving">
+        <member name="E:OnCollisionActivateEx.ReorderableListControl.ItemRemoving">
             <summary>
             Occurs before list item is removed and allowing for remove operation to be cancelled.
             </summary>
         </member>
-        <member name="E:OnCollisionActivate.ReorderableListControl.ItemMoving">
+        <member name="E:OnCollisionActivateEx.ReorderableListControl.ItemMoving">
             <summary>
             Occurs immediately before list item is moved allowing for move operation to be cancelled.
             </summary>
         </member>
-        <member name="E:OnCollisionActivate.ReorderableListControl.ItemMoved">
+        <member name="E:OnCollisionActivateEx.ReorderableListControl.ItemMoved">
             <summary>
             Occurs after list item has been moved.
             </summary>
         </member>
-        <member name="T:OnCollisionActivate.ReorderableListControl.ItemDrawer`1">
+        <member name="T:OnCollisionActivateEx.ReorderableListControl.ItemDrawer`1">
             <summary>
             Invoked to draw list item.
             </summary>
@@ -1491,7 +1491,7 @@
             The modified value.
             </returns>
         </member>
-        <member name="T:OnCollisionActivate.ReorderableListControl.DrawEmpty">
+        <member name="T:OnCollisionActivateEx.ReorderableListControl.DrawEmpty">
             <summary>
             Invoked to draw content for empty list.
             </summary>
@@ -1542,13 +1542,13 @@
             ]]></code>
             </example>
         </member>
-        <member name="T:OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute">
+        <member name="T:OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute">
             <summary>
             Invoked to draw content for empty list with absolute positioning.
             </summary>
             <param name="position">Position of empty content.</param>
         </member>
-        <member name="T:OnCollisionActivate.ReorderableListFlags">
+        <member name="T:OnCollisionActivateEx.ReorderableListFlags">
             <summary>
             Additional flags which can be passed into reorderable list field.
             </summary>
@@ -1560,42 +1560,42 @@
             ]]></code>
             </example>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListFlags.DisableReordering">
+        <member name="F:OnCollisionActivateEx.ReorderableListFlags.DisableReordering">
             <summary>
             Hide grab handles and disable reordering of list items.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListFlags.HideAddButton">
+        <member name="F:OnCollisionActivateEx.ReorderableListFlags.HideAddButton">
             <summary>
             Hide add button at base of control.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListFlags.HideRemoveButtons">
+        <member name="F:OnCollisionActivateEx.ReorderableListFlags.HideRemoveButtons">
             <summary>
             Hide remove buttons from list items.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListFlags.DisableContextMenu">
+        <member name="F:OnCollisionActivateEx.ReorderableListFlags.DisableContextMenu">
             <summary>
             Do not display context menu upon right-clicking grab handle.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListFlags.DisableDuplicateCommand">
+        <member name="F:OnCollisionActivateEx.ReorderableListFlags.DisableDuplicateCommand">
             <summary>
             Hide "Duplicate" option from context menu.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListFlags.DisableAutoFocus">
+        <member name="F:OnCollisionActivateEx.ReorderableListFlags.DisableAutoFocus">
             <summary>
             Do not automatically focus first control of newly added items.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListFlags.ShowIndices">
+        <member name="F:OnCollisionActivateEx.ReorderableListFlags.ShowIndices">
             <summary>
             Show zero-based index of array elements.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListFlags.DisableClipping">
+        <member name="F:OnCollisionActivateEx.ReorderableListFlags.DisableClipping">
             <summary>
             Do not attempt to clip items which are out of view.
             </summary>
@@ -1604,17 +1604,17 @@
             some interfaces.</para>
             </remarks>
         </member>
-        <member name="T:OnCollisionActivate.ReorderableListGUI">
+        <member name="T:OnCollisionActivateEx.ReorderableListGUI">
             <summary>
             Utility class for drawing reorderable lists.
             </summary>
         </member>
-        <member name="F:OnCollisionActivate.ReorderableListGUI.DefaultItemHeight">
+        <member name="F:OnCollisionActivateEx.ReorderableListGUI.DefaultItemHeight">
             <summary>
             Default list item height is 18 pixels.
             </summary>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.DefaultItemDrawer``1(UnityEngine.Rect,``0)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.DefaultItemDrawer``1(UnityEngine.Rect,``0)">
             <summary>
             Default list item drawer implementation.
             </summary>
@@ -1628,7 +1628,7 @@
             </returns>
             <typeparam name="T">Type of list item.</typeparam>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.TextFieldItemDrawer(UnityEngine.Rect,System.String)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.TextFieldItemDrawer(UnityEngine.Rect,System.String)">
             <summary>
             Draws text field allowing list items to be edited.
             </summary>
@@ -1644,7 +1644,7 @@
             Modified value of list item.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.Title(UnityEngine.GUIContent)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.Title(UnityEngine.GUIContent)">
             <summary>
             Draw title control for list field.
             </summary>
@@ -1663,7 +1663,7 @@
             </example>
             <param name="title">Content for title control.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.Title(System.String)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.Title(System.String)">
             <summary>
             Draw title control for list field.
             </summary>
@@ -1682,21 +1682,21 @@
             </example>
             <param name="title">Text for title control.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.Title(UnityEngine.Rect,UnityEngine.GUIContent)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.Title(UnityEngine.Rect,UnityEngine.GUIContent)">
             <summary>
             Draw title control for list field with absolute positioning.
             </summary>
             <param name="position">Position of control.</param>
             <param name="title">Content for title control.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.Title(UnityEngine.Rect,System.String)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.Title(UnityEngine.Rect,System.String)">
             <summary>
             Draw title control for list field with absolute positioning.
             </summary>
             <param name="position">Position of control.</param>
             <param name="text">Text for title control.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
             Draw list field control.
             </summary>
@@ -1707,7 +1707,7 @@
             <param name="flags">Optional flags to pass into list field.</param>
             <typeparam name="T">Type of list item.</typeparam>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
             Draw list field control with absolute positioning.
             </summary>
@@ -1719,55 +1719,55 @@
             <param name="flags">Optional flags to pass into list field.</param>
             <typeparam name="T">Type of list item.</typeparam>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,System.Single)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,System.Single)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,System.Single)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,System.Single)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},System.Single,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},System.Single,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},System.Single,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},System.Single,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},System.Single)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},System.Single)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},System.Single)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},System.Single)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0})">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0})">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField``1(System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmpty,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0})">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivate.ReorderableListControl.ItemDrawer{``0},OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0})">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},OnCollisionActivateEx.ReorderableListControl.ItemDrawer{``0},OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(System.Int32,System.Single,OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(System.Int32,System.Single,OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
             Calculate height of list field for absolute positioning.
             </summary>
@@ -1778,16 +1778,16 @@
             Required list height in pixels.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(System.Int32,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(System.Int32,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(System.Int32,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(System.Int32,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(System.Int32,System.Single)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(System.Int32,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(System.Int32,System.Single)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(System.Int32,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(System.Int32)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(System.Int32,System.Single,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(System.Int32)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(System.Int32,System.Single,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
             Draw list field control for serializable property array.
             </summary>
@@ -1796,7 +1796,7 @@
             <param name="drawEmpty">Callback to draw custom content for empty list (optional).</param>
             <param name="flags">Optional flags to pass into list field.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
             Draw list field control for serializable property array.
             </summary>
@@ -1806,31 +1806,31 @@
             <param name="drawEmpty">Callback to draw custom content for empty list (optional).</param>
             <param name="flags">Optional flags to pass into list field.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,OnCollisionActivate.ReorderableListControl.DrawEmpty)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,OnCollisionActivateEx.ReorderableListControl.DrawEmpty)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(UnityEditor.SerializedProperty)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(UnityEditor.SerializedProperty)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(UnityEditor.SerializedProperty,OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(UnityEditor.SerializedProperty,OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
             Calculate height of list field for absolute positioning.
             </summary>
@@ -1840,34 +1840,34 @@
             Required list height in pixels.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(UnityEditor.SerializedProperty)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(UnityEditor.SerializedProperty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(UnityEditor.SerializedProperty)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(UnityEditor.SerializedProperty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmpty)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmpty)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,System.Single)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(UnityEditor.SerializedProperty,System.Single)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,UnityEditor.SerializedProperty,System.Single,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.DoListField(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
             Draw list field control for adapted collection.
             </summary>
@@ -1875,7 +1875,7 @@
             <param name="drawEmpty">Callback to draw custom content for empty list (optional).</param>
             <param name="flags">Optional flags to pass into list field.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
             Draw list field control for adapted collection.
             </summary>
@@ -1884,31 +1884,31 @@
             <param name="drawEmpty">Callback to draw custom content for empty list (optional).</param>
             <param name="flags">Optional flags to pass into list field.</param>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListFlags)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListFlags)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListField(OnCollisionActivate.IReorderableListAdaptor)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListField(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmpty,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListField(OnCollisionActivateEx.IReorderableListAdaptor)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListField(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmpty,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.ListFieldAbsolute(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.DoListFieldAbsolute(UnityEngine.Rect,OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListControl.DrawEmptyAbsolute,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListFlags)">
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListFlags)">
             <summary>
             Calculate height of list field for adapted collection.
             </summary>
@@ -1918,10 +1918,10 @@
             Required list height in pixels.
             </returns>
         </member>
-        <member name="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(OnCollisionActivate.IReorderableListAdaptor)">
-            <inheritdoc cref="M:OnCollisionActivate.ReorderableListGUI.CalculateListFieldHeight(OnCollisionActivate.IReorderableListAdaptor,OnCollisionActivate.ReorderableListFlags)"/>
+        <member name="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(OnCollisionActivateEx.IReorderableListAdaptor)">
+            <inheritdoc cref="M:OnCollisionActivateEx.ReorderableListGUI.CalculateListFieldHeight(OnCollisionActivateEx.IReorderableListAdaptor,OnCollisionActivateEx.ReorderableListFlags)"/>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListGUI.IndexOfChangedItem">
+        <member name="P:OnCollisionActivateEx.ReorderableListGUI.IndexOfChangedItem">
             <summary>
             Gets or sets zero-based index of last item which was changed. A value of -1
             indicates that no item was changed by list.
@@ -1930,18 +1930,18 @@
             <para>This property should not be set when items are added or removed.</para>
             </remarks>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListGUI.CurrentItemIndex">
+        <member name="P:OnCollisionActivateEx.ReorderableListGUI.CurrentItemIndex">
             <summary>
             Gets zero-based index of list item which is currently being drawn;
             or a value of -1 if no item is currently being drawn.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.ReorderableListGUI.DefaultListControl">
+        <member name="P:OnCollisionActivateEx.ReorderableListGUI.DefaultListControl">
             <summary>
             Gets the default list control implementation.
             </summary>
         </member>
-        <member name="T:OnCollisionActivate.SerializedPropertyAdaptor">
+        <member name="T:OnCollisionActivateEx.SerializedPropertyAdaptor">
             <summary>
             Reorderable list adaptor for serialized array property.
             </summary>
@@ -1954,7 +1954,7 @@
             manipulate lists.</para>
             </remarks>
         </member>
-        <member name="F:OnCollisionActivate.SerializedPropertyAdaptor.FixedItemHeight">
+        <member name="F:OnCollisionActivateEx.SerializedPropertyAdaptor.FixedItemHeight">
             <summary>
             Fixed height of each list item.
             </summary>
@@ -1963,59 +1963,59 @@
             which is more efficient.</para>
             </remarks>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.#ctor(UnityEditor.SerializedProperty,System.Single)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.#ctor(UnityEditor.SerializedProperty,System.Single)">
             <summary>
-            Initializes a new instance of <see cref="T:OnCollisionActivate.SerializedPropertyAdaptor"/>.
+            Initializes a new instance of <see cref="T:OnCollisionActivateEx.SerializedPropertyAdaptor"/>.
             </summary>
             <param name="arrayProperty">Serialized property for entire array.</param>
             <param name="fixedItemHeight">Non-zero height overrides property drawer height calculation.</param>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.#ctor(UnityEditor.SerializedProperty)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.#ctor(UnityEditor.SerializedProperty)">
             <summary>
-            Initializes a new instance of <see cref="T:OnCollisionActivate.SerializedPropertyAdaptor"/>.
+            Initializes a new instance of <see cref="T:OnCollisionActivateEx.SerializedPropertyAdaptor"/>.
             </summary>
             <param name="arrayProperty">Serialized property for entire array.</param>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.CanDrag(System.Int32)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.CanDrag(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.CanRemove(System.Int32)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.CanRemove(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.Add">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.Add">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.Insert(System.Int32)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.Insert(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.Duplicate(System.Int32)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.Duplicate(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.Remove(System.Int32)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.Remove(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.Move(System.Int32,System.Int32)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.Move(System.Int32,System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.Clear">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.Clear">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.DrawItemBackground(UnityEngine.Rect,System.Int32)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.DrawItemBackground(UnityEngine.Rect,System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.DrawItem(UnityEngine.Rect,System.Int32)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.DrawItem(UnityEngine.Rect,System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.GetItemHeight(System.Int32)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.GetItemHeight(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:OnCollisionActivate.SerializedPropertyAdaptor.ResetValue(UnityEditor.SerializedProperty)">
+        <member name="M:OnCollisionActivateEx.SerializedPropertyAdaptor.ResetValue(UnityEditor.SerializedProperty)">
             <summary>
             Reset value of array element.
             </summary>
             <param name="element">Serializd property for array element.</param>
         </member>
-        <member name="P:OnCollisionActivate.SerializedPropertyAdaptor.Item(System.Int32)">
+        <member name="P:OnCollisionActivateEx.SerializedPropertyAdaptor.Item(System.Int32)">
             <summary>
             Gets element from list.
             </summary>
@@ -2024,12 +2024,12 @@
             Serialized property wrapper for array element.
             </returns>
         </member>
-        <member name="P:OnCollisionActivate.SerializedPropertyAdaptor.arrayProperty">
+        <member name="P:OnCollisionActivateEx.SerializedPropertyAdaptor.arrayProperty">
             <summary>
             Gets the underlying serialized array property.
             </summary>
         </member>
-        <member name="P:OnCollisionActivate.SerializedPropertyAdaptor.Count">
+        <member name="P:OnCollisionActivateEx.SerializedPropertyAdaptor.Count">
             <inheritdoc/>
         </member>
     </members>
