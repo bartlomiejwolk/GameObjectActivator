@@ -36,20 +36,6 @@ namespace OnCollisionActivateEx {
 
             serializedObject.ApplyModifiedProperties();
         }
-
-        private void DrawGameObjectsActivatedCallback() {
-            EditorGUILayout.PropertyField(
-                gameObjectsActivatedCallback,
-                new GUIContent(
-                    "Callback",
-                    "Callback executed after all GOs were enabled."));
-        }
-
-        private void DrawObjectsToEnableList() {
-            ReorderableListGUI.Title("Objects to enable");
-            ReorderableListGUI.ListField(objectsToEnable);
-        }
-
         private void OnEnable() {
             objectsToEnable = serializedObject.FindProperty("objectsToEnable");
             gameObjectsActivatedCallback =
@@ -60,6 +46,19 @@ namespace OnCollisionActivateEx {
         #endregion UNITY MESSAGES
 
         #region INSPECTOR CONTROLS
+        private void DrawObjectsToEnableList() {
+            ReorderableListGUI.Title("Objects to enable");
+            ReorderableListGUI.ListField(objectsToEnable);
+        }
+
+        private void DrawGameObjectsActivatedCallback() {
+            EditorGUILayout.PropertyField(
+                gameObjectsActivatedCallback,
+                new GUIContent(
+                    "Callback",
+                    "Callback executed after all GOs were enabled."));
+        }
+
 
         private void DrawDescriptionTextArea() {
             description.stringValue = EditorGUILayout.TextArea(
