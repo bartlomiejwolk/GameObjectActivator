@@ -71,23 +71,6 @@ namespace OnCollisionActivateEx {
 
             foreach (var objectSlot in ObjectsToEnable) {
                 HandleActivateGameObject(objectSlot, hitInfo);
-                //switch (obj.TagOption) {
-                //    case TagOptions.Include:
-                //        if (hitGOTag != obj.Tag) {
-                //            break;
-                //        }
-                //        obj.ObjToEnable.SetActive(true);
-                //        break;
-
-                //    case TagOptions.Exclude:
-                //        // Don't enable target object when hit a GO with
-                //        // excluded tag.
-                //        if (hitGOTag == obj.Tag) {
-                //            break;
-                //        }
-                //        obj.ObjToEnable.SetActive(true);
-                //        break;
-                //}
             }
 
             GameObjectsActivatedCallback.Invoke();
