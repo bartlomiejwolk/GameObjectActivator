@@ -15,7 +15,7 @@ Extensions with version below 1.0.0 are considered to be pre/alpha and may not w
 
 ## Resources
 
-Nothing here.
+* [Blog post](https://bartlomiejwolk.wordpress.com/2015/05/26/oncollisionactivate-unity-component/)
 
 ## Quick Start
 
