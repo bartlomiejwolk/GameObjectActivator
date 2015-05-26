@@ -39,7 +39,7 @@ namespace OnCollisionActivateEx {
 
             DrawInclusionOptionDropdown(pos, tagOption);
             DrawIncludeExcludeTypeDropdown(pos, includeExcludeType);
-            DrawTagDropdown(pos, tag);
+            HandleDrawTagDropdown(pos, tag, includeExcludeType);
         }
 
         private void DrawIncludeExcludeTypeDropdown(
@@ -91,21 +91,27 @@ namespace OnCollisionActivateEx {
                 GUIContent.none);
         }
 
-        // todo draw dropdown
-        private static void DrawTagDropdown(Rect pos, SerializedProperty tag) {
+        private static void HandleDrawTagDropdown(
+            Rect pos,
+            SerializedProperty tag,
+            SerializedProperty includeExcludeType) {
+
+            if (includeExcludeType.enumValueIndex !=
+                (int) InludeExcludeType.Tag) return;
+
             EditorGUIUtility.labelWidth = 0;
 
-            EditorGUI.PropertyField(
+            tag.stringValue = EditorGUI.TagField(
                 new Rect(
                     pos.x + pos.width * 0.66f,
                     pos.y + 19,
                     pos.width * 0.3f,
                     16),
-                tag,
                 new GUIContent(
                     "",
                     "Target GO must have this tag attached in order to be " +
-                    "enabled."));
+                    "enabled."),
+                tag.stringValue);
         }
 
     }
