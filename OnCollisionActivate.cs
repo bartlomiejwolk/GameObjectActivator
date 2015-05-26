@@ -67,14 +67,14 @@ namespace OnCollisionActivateEx {
         #region METHODS
 
         // todo add doc
-        /// Handle collision.
         public void Activate(RaycastHit hitInfo) {
             var hitGOTag = hitInfo.transform.gameObject.tag;
+            var hitGoLayer = hitInfo.transform.gameObject.layer;
 
             foreach (var obj in ObjectsToEnable) {
                 switch (obj.TagOption) {
                     case TagOptions.Include:
-                        if (hitGOTag != obj.ExcludeTag) {
+                        if (hitGOTag != obj.Tag) {
                             break;
                         }
                         obj.ObjToEnable.SetActive(true);
@@ -83,7 +83,7 @@ namespace OnCollisionActivateEx {
                     case TagOptions.Exclude:
                         // Don't enable target object when hit a GO with
                         // excluded tag.
-                        if (hitGOTag == obj.ExcludeTag) {
+                        if (hitGOTag == obj.Tag) {
                             break;
                         }
                         obj.ObjToEnable.SetActive(true);

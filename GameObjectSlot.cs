@@ -43,7 +43,7 @@ namespace OnCollisionActivateEx {
 
         #region PROPERTIES
 
-        public string ExcludeTag {
+        public string Tag {
             get { return tag; }
             set { tag = value; }
         }
