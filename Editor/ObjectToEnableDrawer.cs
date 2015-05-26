@@ -46,6 +46,18 @@ namespace OnCollisionActivateEx {
             Rect pos,
             SerializedProperty includeExcludeType) {
 
+            EditorGUIUtility.labelWidth = 0;
+
+            EditorGUI.PropertyField(
+                new Rect(
+                    pos.x + pos.width * 0.33f,
+                    pos.y + 19,
+                    pos.width * 0.3f,
+                    16),
+                includeExcludeType,
+                new GUIContent(
+                    "",
+                    ""));
         }
 
         private static void DrawObjToEnableField(
@@ -53,10 +65,14 @@ namespace OnCollisionActivateEx {
             SerializedProperty objToEnable) {
 
             // Draw objToEnable field.
-            EditorGUIUtility.labelWidth = 85;
+            EditorGUIUtility.labelWidth = 0;
 
             EditorGUI.PropertyField(
-                new Rect(pos.x, pos.y, pos.width, 16),
+                new Rect(
+                    pos.x,
+                    pos.y,
+                    pos.width,
+                    16),
                 objToEnable,
                 new GUIContent("GameObject", "GameObject to enable."));
         }
@@ -66,28 +82,30 @@ namespace OnCollisionActivateEx {
             SerializedProperty tagOption) {
 
             EditorGUI.PropertyField(
-                new Rect(pos.x, pos.y + 19, pos.width * 0.3f, 16),
+                new Rect(
+                    pos.x,
+                    pos.y + 19,
+                    pos.width * 0.3f,
+                    16),
                 tagOption,
                 GUIContent.none);
         }
 
         // todo draw dropdown
         private static void DrawTagDropdown(Rect pos, SerializedProperty tag) {
-            EditorGUIUtility.labelWidth = 40;
+            EditorGUIUtility.labelWidth = 0;
 
             EditorGUI.PropertyField(
                 new Rect(
-                    pos.x + pos.width * 0.01f + pos.width * 0.3f,
+                    pos.x + pos.width * 0.66f,
                     pos.y + 19,
-                    pos.width * 0.69f,
+                    pos.width * 0.3f,
                     16),
                 tag,
                 new GUIContent(
                     "",
                     "Target GO must have this tag attached in order to be " +
                     "enabled."));
-
-            EditorGUIUtility.labelWidth = 0;
         }
 
     }
