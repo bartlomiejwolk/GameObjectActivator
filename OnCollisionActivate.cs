@@ -68,30 +68,89 @@ namespace OnCollisionActivateEx {
 
         // todo add doc
         public void Activate(RaycastHit hitInfo) {
-            var hitGOTag = hitInfo.transform.gameObject.tag;
-            var hitGoLayer = hitInfo.transform.gameObject.layer;
 
-            foreach (var obj in ObjectsToEnable) {
-                switch (obj.TagOption) {
-                    case TagOptions.Include:
-                        if (hitGOTag != obj.Tag) {
-                            break;
-                        }
-                        obj.ObjToEnable.SetActive(true);
-                        break;
+            foreach (var objectSlot in ObjectsToEnable) {
+                HandleActivateGameObject(objectSlot, hitInfo);
+                //switch (obj.TagOption) {
+                //    case TagOptions.Include:
+                //        if (hitGOTag != obj.Tag) {
+                //            break;
+                //        }
+                //        obj.ObjToEnable.SetActive(true);
+                //        break;
 
-                    case TagOptions.Exclude:
-                        // Don't enable target object when hit a GO with
-                        // excluded tag.
-                        if (hitGOTag == obj.Tag) {
-                            break;
-                        }
-                        obj.ObjToEnable.SetActive(true);
-                        break;
-                }
+                //    case TagOptions.Exclude:
+                //        // Don't enable target object when hit a GO with
+                //        // excluded tag.
+                //        if (hitGOTag == obj.Tag) {
+                //            break;
+                //        }
+                //        obj.ObjToEnable.SetActive(true);
+                //        break;
+                //}
             }
 
             GameObjectsActivatedCallback.Invoke();
+        }
+
+        private void HandleActivateGameObject(
+            GameObjectSlot gameObjectSlot,
+            RaycastHit hitInfo) {
+
+            HandleActivateByTag(gameObjectSlot, hitInfo);
+            HandleActivateByLayer(gameObjectSlot, hitInfo);
+        }
+
+        private void HandleActivateByLayer(
+            GameObjectSlot gameObjectSlot,
+            RaycastHit hitInfo) {
+
+            if (gameObjectSlot.IncludeExcludeType != InludeExcludeType.Layer) {
+                return;
+            }
+
+            var hitGoLayer = hitInfo.transform.gameObject.layer;
+
+            // Handle include/exclude option.
+            switch (gameObjectSlot.TagOption) {
+                case TagOptions.Include:
+                    // Check layer.
+                    if (hitGoLayer == gameObjectSlot.Layer) {
+                        gameObjectSlot.ObjToEnable.SetActive(true);
+                    } 
+                    break;
+                case TagOptions.Exclude:
+                    if (hitGoLayer != gameObjectSlot.Layer) {
+                        gameObjectSlot.ObjToEnable.SetActive(true);
+                    } 
+                    break;
+            }
+        }
+
+        private void HandleActivateByTag(
+            GameObjectSlot gameObjectSlot,
+            RaycastHit hitInfo) {
+
+            if (gameObjectSlot.IncludeExcludeType != InludeExcludeType.Tag) {
+                return;
+            }
+
+            var hitGOTag = hitInfo.transform.gameObject.tag;
+
+            // Handle include/exclude option.
+            switch (gameObjectSlot.TagOption) {
+                case TagOptions.Include:
+                    // Check tag.
+                    if (hitGOTag == gameObjectSlot.Tag) {
+                        gameObjectSlot.ObjToEnable.SetActive(true);
+                    }
+                    break;
+                case TagOptions.Exclude:
+                    if (hitGOTag != gameObjectSlot.Tag) {
+                        gameObjectSlot.ObjToEnable.SetActive(true);
+                    }
+                    break;
+            }
         }
 
         #endregion METHODS
