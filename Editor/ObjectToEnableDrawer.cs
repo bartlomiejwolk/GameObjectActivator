@@ -67,8 +67,7 @@ namespace OnCollisionActivateEx {
             Rect pos,
             SerializedProperty objToEnable) {
 
-            // Draw objToEnable field.
-            EditorGUIUtility.labelWidth = 0;
+            EditorGUIUtility.labelWidth = 80;
 
             EditorGUI.PropertyField(
                 new Rect(
