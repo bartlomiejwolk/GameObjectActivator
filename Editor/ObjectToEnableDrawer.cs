@@ -34,12 +34,15 @@ namespace OnCollisionActivateEx {
                 prop.FindPropertyRelative("tag");
             var includeExcludeType =
                 prop.FindPropertyRelative("includeExcludeType");
+            var layer =
+                prop.FindPropertyRelative("layer");
 
             DrawObjToEnableField(pos, objToEnable);
 
             DrawInclusionOptionDropdown(pos, tagOption);
             DrawIncludeExcludeTypeDropdown(pos, includeExcludeType);
             HandleDrawTagDropdown(pos, tag, includeExcludeType);
+            HandleDrawLayerDropdown(pos, layer, includeExcludeType);
         }
 
         private void DrawIncludeExcludeTypeDropdown(
@@ -112,6 +115,28 @@ namespace OnCollisionActivateEx {
                     "Target GO must have this tag attached in order to be " +
                     "enabled."),
                 tag.stringValue);
+        }
+
+        private static void HandleDrawLayerDropdown(
+            Rect pos,
+            SerializedProperty layer,
+            SerializedProperty includeExcludeType) {
+
+            if (includeExcludeType.enumValueIndex !=
+                (int)InludeExcludeType.Layer) return;
+
+            EditorGUIUtility.labelWidth = 0;
+
+            layer.intValue = EditorGUI.LayerField(
+                new Rect(
+                    pos.x + pos.width * 0.66f,
+                    pos.y + 19,
+                    pos.width * 0.3f,
+                    16),
+                new GUIContent(
+                    "",
+                    "Layer Mask"),
+                layer.intValue);
         }
 
     }

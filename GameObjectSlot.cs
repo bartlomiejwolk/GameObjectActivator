@@ -33,6 +33,12 @@ namespace OnCollisionActivateEx {
         [SerializeField]
         private TagOptions tagOption;
 
+        /// <summary>
+        /// Only game object on selected layers will be taken into account.
+        /// </summary>
+        [SerializeField]
+        private LayerMask layer;
+
         #endregion FIELDS
 
         #region PROPERTIES
@@ -54,6 +60,11 @@ namespace OnCollisionActivateEx {
         public InludeExcludeType IncludeExcludeType {
             get { return includeExcludeType; }
             set { includeExcludeType = value; }
+        }
+
+        public LayerMask Layer {
+            get { return layer; }
+            set { layer = value; }
         }
 
         #endregion PROPERTIES
